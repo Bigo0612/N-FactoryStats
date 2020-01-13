@@ -85,13 +85,13 @@ body {
     transform: scale(0.7);
 }
 
-.header-acceuil {
+.header-accueil {
     width: 100%;
     background-color: #FFF;
     overflow: auto;
 }
 
-.header-acceuil a {
+.header-accueil a {
     float: left;
     padding-right: 20px;
     font-size: 1.5vw;
@@ -103,7 +103,7 @@ body {
     text-decoration: none;
 }
 
-.header-acceuil a p {
+.header-accueil a p {
     margin: 12px 0;
 }
 
@@ -113,7 +113,7 @@ body {
     color: #FFFFFF;
 }
 
-.header-acceuil p:hover{
+.header-accueil p:hover{
     -webkit-box-shadow: 1px -1px 9px 4px rgba(219,215,219,1);
     -moz-box-shadow: 1px -1px 9px 4px rgba(219,215,219,1);
     box-shadow: 1px -1px 9px 4px rgba(219,215,219,1);
@@ -135,10 +135,19 @@ header .fixmenu {
     width: 100%;
     margin: 0 auto;
     max-width: 460px;
+    max-height: 50px;
+
 }
 
 .flexslider {
     padding-top: 200px;
+
+
+}
+
+.flexslider .slides img {
+    height: 500px;
+
 }
 
 img {

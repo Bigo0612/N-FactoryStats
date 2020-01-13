@@ -1,7 +1,8 @@
 $(window).load(function() {
     $('.flexslider').flexslider({
         animation: "slide",
-        slideshowSpeed: 2000
+        slideshowSpeed: 10000,
+        animationSpeed: 2000
     });
 });
 
