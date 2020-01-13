@@ -35,13 +35,13 @@ include('inc/header.php'); ?>
         <div class=" wrap">
             <ul class="slides">
                 <li>
-                    <img src="asset/img/slide1.jpg" alt="image de stats 1"/>
+                    <img src="asset/img/slide1.png" alt="image de stats 1"/>
                 </li>
                 <li>
-                    <img src="asset/img/slide2.jpg" alt="image de stats 2"/>
+                    <img src="asset/img/slide2.png" alt="image de stats 2"/>
                 </li>
                 <li>
-                    <img src="asset/img/slide3.jpg" alt="image de stats 3"/>
+                    <img src="asset/img/slide3.png" alt="image de stats 3"/>
                 </li>
             </ul>
         </div>
