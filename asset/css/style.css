@@ -140,10 +140,11 @@ header .fixmenu {
 }
 
 .flexslider {
-    padding-top: 200px;
+    margin-top: 80px;
 
 
 }
+
 
 .flexslider .slides img {
     height: 500px;
@@ -182,6 +183,7 @@ h2 {
     text-transform: uppercase;
     font-size: 3vw ;
     padding: 20px;
+
 }
 
 h3 {
