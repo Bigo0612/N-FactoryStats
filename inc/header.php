@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Ibarra+Real+Nova&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400i,700,700i&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="asset/flexslider/flexslider.css" type="text/css">
     <link rel="stylesheet" href="asset/css/style.css">
     <title>N'FactoryStats</title>
