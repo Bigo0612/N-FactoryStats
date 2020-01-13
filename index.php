@@ -38,13 +38,10 @@ include('inc/header.php'); ?>
                     <img src="asset/img/slide1.jpg" alt="image de stats 1"/>
                 </li>
                 <li>
-                    <img src="asset/img/slide2.png" alt="image de stats 2"/>
+                    <img src="asset/img/slide2.jpg" alt="image de stats 2"/>
                 </li>
                 <li>
-                    <img src="asset/img/slide3.png" alt="image de stats 3"/>
-                </li>
-                <li>
-                    <img src="asset/img/slide4.png" alt="image de stats 4"/>
+                    <img src="asset/img/slide3.jpg" alt="image de stats 3"/>
                 </li>
             </ul>
         </div>

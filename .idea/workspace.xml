@@ -3,6 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="3d9a31f7-0963-46bd-af41-ee081e932d0f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asset/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/asset/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asset/img/slide1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/asset/img/slide1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asset/img/slide2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/asset/img/slide3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/asset/img/slide4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/asset/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/asset/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,7 +80,7 @@
       <workItem from="1578902804697" duration="276000" />
       <workItem from="1578903084338" duration="8000" />
       <workItem from="1578903095185" duration="6000" />
-      <workItem from="1578919803135" duration="1287000" />
+      <workItem from="1578919803135" duration="4347000" />
     </task>
     <task id="LOCAL-00001" summary="création branche develop et features css">
       <created>1578920592987</created>
