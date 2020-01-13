@@ -30,16 +30,16 @@
             <p>Veuillez remplir ce formulaire pour créer un compte.</p>
             <hr>
             <label for="email"><b>Email</b></label>
-            <input type="text" placeholder="Enter Email" name="email" required>
+            <input class="inscritption" type="text" placeholder="Enter Email" name="email" required>
 
             <label for="psw"><b>Mot de passe</b></label>
-            <input type="password" placeholder="Entre votre mot de pass" name="psw" required>
+            <input class="inscritption" type="password" placeholder="Entrer votre mot de pass" name="psw" required>
 
             <label for="psw-repeat"><b>Répéter le mot de passe</b></label>
-            <input type="password" placeholder="Répéter votre mot de passe" name="psw-repeat" required>
+            <input class="inscritption" type="password" placeholder="Répéter votre mot de passe" name="psw-repeat" required>
 
             <label>
-                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Se souvenir de moi
+                <input class="inscritption" type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Se souvenir de moi
             </label>
 
             <p>En créant un compte, vous acceptez nos <a href="#" style="color:dodgerblue">Conditions et confidentialité</a>.</p>
@@ -54,17 +54,17 @@
 
 
 
-<div id="id01" class="modal">
+<div id="id02" class="modal2">
   <span onclick="document.getElementById('id02').style.display='none'"
-        class="close" title="Close Modal">&times;</span>
+        class="close2" title="Close Modal">&times;</span>
 
 
-    <form class="modal-content animate" action="/action_page.php">
-        <div class="imgcontainer">
+    <form class="modal-content2 animate" action="/action_page.php">
+        <div class="imgcontainer2">
             <img src="img_avatar2.png" alt="Avatar" class="avatar">
         </div>
 
-        <div class="container">
+        <div class="container2">
             <label for="uname"><b>Nom d'utilisateur</b></label>
             <input type="text" placeholder="Entrer votre nom d'utilisateur" name="uname" required>
 
@@ -77,7 +77,7 @@
             </label>
         </div>
 
-        <div class="container" style="background-color:#f1f1f1">
+        <div class="container2" style="background-color:#f1f1f1">
             <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
             <span class="psw">Forgot <a href="#">password?</a></span>
         </div>

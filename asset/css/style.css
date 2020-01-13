@@ -54,13 +54,13 @@ table {
     box-sizing: border-box; /* Opera/IE 8+ */
 }
 
-/* Font */
+/*//////////////////////////////////////////// Font ////////////////////////////////////////*/
 
 body {
     font-family: 'Ibarra Real Nova', serif;
 }
 
-/* Header */
+/*////////////////////////////////////////// Header /////////////////////////////////////*/
 
 .wrapper {
     width: 100%;
@@ -146,7 +146,7 @@ img {
     height: 50px;
 }
 
-/* Qui sommes nous ? */
+/*/////////////////////////////////////// Qui sommes nous ? //////////////////////////////////////*/
 
 .wrap2 {
     width: 100%;
@@ -166,7 +166,7 @@ img {
     line-height: 40px;
 }
 
-/* Contact */
+/*/////////////////////////////////////////////// Contact /////////////////////////////////////////////*/
 
 h2 {
     text-align: center;
@@ -270,7 +270,7 @@ input[type=submit]:hover {
 
 
 
-/* Footer */
+/*/////////////////////////////////////////////////// Footer ////////////////////////////////////////*/
 
 .wrap4 {
     width: 100%;
@@ -310,22 +310,12 @@ footer a:hover {
     border-radius: 5px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
+/* ///////////////////////////////////// Inscription /////////////////////////////////////////////////////
 
 
 * {box-sizing: border-box}
 /* Full-width input fields */
-input[type=text], input[type=password] {
+.inscription[type=text], .inscription[type=password] {
     width: 100%;
     padding: 15px;
     margin: 5px 0 22px 0;
@@ -335,7 +325,7 @@ input[type=text], input[type=password] {
 }
 
 /* Add a background color when the inputs get focus */
-input[type=text]:focus, input[type=password]:focus {
+.inscription[type=text]:focus, .inscription[type=password]:focus {
     background-color: #ddd;
     outline: none;
 }
@@ -431,10 +421,11 @@ hr {
     }
 }
 
+/*///////////////////////////////////////// Connexion //////////////////////////////////////////////////////////////////*/
 
 
 /* The Modal (background) */
-.modal {
+.modal2 {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -449,7 +440,7 @@ hr {
 }
 
 /* Modal Content/Box */
-.modal-content {
+.modal-content2 {
     background-color: #fefefe;
     margin: 5px auto; /* 15% from the top and centered */
     border: 1px solid #888;
@@ -457,7 +448,7 @@ hr {
 }
 
 /* The Close Button */
-.close {
+.close2 {
     /* Position it in the top right corner outside of the modal */
     position: absolute;
     right: 25px;
@@ -468,8 +459,8 @@ hr {
 }
 
 /* Close button on hover */
-.close:hover,
-.close:focus {
+.close2:hover,
+.close2:focus {
     color: red;
     cursor: pointer;
 }
