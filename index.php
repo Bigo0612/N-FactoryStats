@@ -5,8 +5,8 @@ $errors = array();
 $success = false;
 if (!empty($_POST['submit'])) {
     $email           = clean($_POST['email']);
-    $password        = clean($_POST['password']));
-    $password2       = clean($_POST['password2']));
+    $password        = clean($_POST['password']);
+    $password2       = clean($_POST['password2']);
 
 
     $errors = emailValid($errors, $email, 'email',5,255);
