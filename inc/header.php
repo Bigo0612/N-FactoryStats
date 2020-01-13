@@ -12,7 +12,7 @@
 <header>
     <div class="fixmenu">
         <div class="header-accueil">
-            <a id="logo" href="index.php"><img class="imglogo" src="asset/img/N'FactoryStats.png" alt="image de logo N\'FactoryStats"></a>
+            <a id="logo" href="index.php"><img class="imglogo" src="asset/img/logogi.png" alt="image de logo N\'FactoryStats"></a>
             <a href="#quisommesnous"><p>Qui sommes nous ?</p></a>
             <a href="#contact"><p>Contactez nous</p></a>
             <a onclick="document.getElementById('id02').style.display='block'" href="#"><p>Connexion</p></a>
