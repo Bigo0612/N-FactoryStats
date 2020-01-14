@@ -21,14 +21,12 @@
             <img class="logo" src="asset/img/logo1.png" alt="logo Nfactory Stats">
         </a>
         <ul>
-            <li><a href="#">Accueil</a></li>
-            <li><a href="#">Inscription</a></li>
-            <li><a href="#">Connexion</a></li>
+            <li><a href="index.php">Accueil</a></li>
+            <li><a href="inscription.php">Inscription</a></li>
+            <li><a href="connexion.php">Connexion</a></li>
         </ul>
     </nav>
 </header>
-
-<h1>NFactory Stats</h1>
 
 <div class="main-img"></div>
 
