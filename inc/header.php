@@ -2,26 +2,34 @@
 <html lang="fr" dir="ltr">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Ibarra+Real+Nova&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400i,700,700i&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="asset/flexslider/flexslider.css" type="text/css">
+    <title><?php if (!empty($title)) {
+            echo $title;
+        } else {
+            echo 'nom du site';
+        } ?> </title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="asset/css/style.css">
-    <title>N'FactoryStats</title>
 </head>
 
+
+<body>
+
 <header>
-    <div class="fixmenu">
-        <div class="header-accueil">
-            <a id="logo" href="index.php"><img class="imglogo" src="asset/img/logo.png" alt="image de logo N\'FactoryStats"></a>
-            <a href="#quisommesnous"><p>Qui sommes nous ?</p></a>
-            <a href="#contact"><p>Contactez nous</p></a>
-            <a href="#"><p>Connexion</p></a>
-            <a href="#"><p>Inscription</p></a>
-        </div>
-    </div>
-    <div class="clear"></div>
+    <nav class="navbar">
+        <a href="index.php">
+            <img class="logo" src="asset/img/logo1.png" alt="logo Nfactory Stats">
+        </a>
+        <ul>
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#">Inscription</a></li>
+            <li><a href="#">Connexion</a></li>
+        </ul>
+    </nav>
 </header>
 
+<h1>NFactory Stats</h1>
+
+<div class="main-img"></div>
 
 
+<div id="wrap">
