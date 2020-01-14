@@ -19,3 +19,9 @@ include ('inc/header.php'); ?>
 <section class="utile">
 
 </section>
+
+<?php
+
+
+include ('inc/footer.php');
+ ?>
