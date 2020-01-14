@@ -36,25 +36,23 @@ header nav ul li {
 header nav ul li a {
     text-decoration: none;
     color: white;
+    padding: 16px 32px;
+    border: solid 1.5px #fff;
+    background-color: rgb(0,0,0,0.5);
+    border-radius: 5px;
 }
 
 header nav ul li a:hover{
     color: #008ebf;
 }
 
+
 .main-img {
-    background-image: url("../img/main-img.jpg");
+    background-image: url("../img/main-img.jpeg");
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-h1 {
-    float: left;
-    font-size: 4rem;
-    opacity: 0.7;
-    margin: 300px 0 0 10%;
 }
 
 .graph-texte img {

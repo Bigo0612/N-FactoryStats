@@ -27,8 +27,6 @@
     </nav>
 </header>
 
-<h1>NFactory Stats</h1>
-
 <div class="main-img"></div>
 
 
