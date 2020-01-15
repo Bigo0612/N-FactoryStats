@@ -23,7 +23,7 @@ if(!empty($_POST['submitted'])) {
             //debug($user);
             if(password_verify($password,$user['password'])) {
 
-                $_SESSION['login'] = array(
+                $_SESSION['email'] = array(
                     'id'    => $user['id'],
                     'email'=> $user['email'],
                     'role'  => $user['role'],
@@ -34,7 +34,7 @@ if(!empty($_POST['submitted'])) {
                 header('Location: index.php');
 
             } else {
-                $errors['email'] = 'inconnu ou mot de passe oublié';
+                $errors['email'] = 'email inconnu ou mot de passe oublié';
             }
         } else {
             $errors['email'] = 'email inconnu';
