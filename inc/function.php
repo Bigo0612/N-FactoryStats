@@ -9,9 +9,9 @@ function clean($string) {
     return $cleaner; }
 
 
-    function debug($tableau) {
-        echo '<pre>'; print_r($tableau); echo '</pre>';
-    }
+function debug($tableau) {
+    echo '<pre>'; print_r($tableau); echo '</pre>';
+}
 
 ///////////////////////////////////////
 // FONCTION DE VALIDATION DE L'EMAIL
@@ -43,4 +43,42 @@ function textValid($err, $text, $key, $x, $y) {
         $err[$key] = 'Veuillez renseigner ce champ';
     }
     return $err;
+}
+
+function generateRandomString($length = 10) {
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $charactersLength = strlen($characters);
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, $charactersLength - 1)];
+    }
+    return $randomString;
+}
+
+
+function is_logged()
+{
+    //$_SESSION['email'] = array(
+    //'id'    => $user['id'],
+    //'email'=> $user['email'],
+    //'role'  => $user['role'],
+    //'ip'    => $_server['REMOTE_ADDR']
+    //);
+    $roles = array('abonne', 'admin');
+    if(!empty($_SESSION['email'])) {
+        if(!empty($_SESSION['email']['id']) && is_numeric($_SESSION['email']['id'])) {
+            if(!empty($_SESSION['email']['email'])) {
+                if(!empty($_SESSION['email']['role'])) {
+                    if(in_array($_SESSION['email']['role'],$roles)) {
+                        if(!empty($_SESSION['email']['ip'])) {
+                            if($_SESSION['email']['ip'] == $_SERVER['REMOTE_ADDR']){
+                                return true;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return false;
 }
