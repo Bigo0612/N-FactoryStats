@@ -20,14 +20,12 @@ body, html {
 header .logo {
     float: left;
     height: 50px;
-    margin-left: 100px;
-    margin-top: 20px;
+    margin: 20px 0 0 100px;
 }
 
 header nav ul {
     float: right;
-    margin-top: 40px;
-    margin-right: 100px;
+    margin: 40px 7% 0 0;
 }
 
 header nav ul li {
@@ -50,7 +48,7 @@ header nav ul li a:hover{
 
 .graph-texte {
     height: 600px;
-    background-color: #fff;
+    background-color: #ECF0F1;
 }
 
 
@@ -62,12 +60,12 @@ header nav ul li a:hover{
 
 .graph-texte .text-left {
     float: left;
-    margin: 195px 0 0 150px;
+    margin: 185px 0 0 150px;
 }
 
 .graph-texte h2 {
     color: #384141;
-    font-size: 3rem;
+    font-size: 4vw;
 }
 
 .graph-texte h2 span {
@@ -75,6 +73,7 @@ header nav ul li a:hover{
 }
 
 .graph-texte p {
+    font-size: 1.2vw;
     float: left;
     line-height: 25px;
     margin-top: 30px;
@@ -91,11 +90,7 @@ header nav ul li a:hover{
     display: block;
     margin-right: auto;
     margin-left: auto;
-}
-
-.simple img, .util img, .pedagogique img {
-    width: 150px;
-    height: 150px;
+    width: 10%;
 }
 
 .ex {
@@ -120,23 +115,43 @@ header nav ul li a:hover{
     margin: 0 auto;
 }
 
+#tronbinoscope {
+    height: 600px;
+    background-color: #ECF0F1;
+}
 
+.ava {
+    float: left;
+    width: 25%;
+    margin-top: 125px;
+}
 
+.ava img {
+    margin-top: 50px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    height: 200px;
+    width: 200px;
+}
 
+.ava h4 {
+    color: #25313C;
+    font-size: 1.8em;
+    text-align: center;
+}
 
-
-
-
-
-
-
-
+.ava p {
+    color: #25313C;
+    text-align: center;
+    margin-top: 50px;
+}
 
 footer {
     color: white;
     text-align: center;
     background-color: #25313C;
-    padding-bottom: 3px;
+    padding: 20px 0 20px 0;
 }
 
 footer p{
@@ -151,4 +166,14 @@ footer a {
 
 footer a:hover {
     color: #008ebf;
+}
+
+@media screen and (max-width: 1100px){
+    .graph-texte h2 {
+        font-size: 5.5vw;
+    }
+    .graph-texte p {
+        font-size: 1.8vw;
+    }
+
 }
