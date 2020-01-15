@@ -1,8 +1,8 @@
 <?php include "header.php"; ?>
 
-<link rel="stylesheet" href="asset/css/cgu.css">
+<link rel="stylesheet" href="asset/css/Mentions-légales.css">
 
-<div class="cgu">
+<div class="Mentions-légales">
 
 
         <strong>La seule contrepartie à l'utilisation de ces mentions légales, est l'engagement total à laisser le lien crédit subdelirium sur cette page de mentions légales.</strong><br />
