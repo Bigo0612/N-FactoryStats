@@ -87,7 +87,7 @@ include('inc/header.php');
         <input type="password" name="password1" id="password1" value="">
         <p class="error"><?php if(!empty($errors['password'])) { echo $errors['password']; } ?></p>
 
-        <label for="password2">confirmer mot de passe</label>
+        <label for="password2">Confirmer le mot de passe</label>
         <input type="password" name="password2" id="password2" value="">
 
         <label for="cgu">Conditions générales d’utilisation</label>

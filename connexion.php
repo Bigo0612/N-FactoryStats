@@ -51,7 +51,7 @@ include('inc/header.php');
 
     <form action="connexion.php" method="post" class="formulaires">
 
-        <label for="email">email</label>
+        <label for="email">Email</label>
         <input type="text" name="email" id="email" value="<?php if(!empty($_POST['email']))
         { echo $_POST['email']; } ?>">
         <p class="error"><?php if(!empty($errors['email'])) { echo $errors['email']; } ?></p>
@@ -59,7 +59,7 @@ include('inc/header.php');
         <label for="password">Mot de passe</label>
         <input type="password" name="password" id="password" value="">
 
-        <input type="submit" name="submitted" value="connexion">
+        <input type="submit" name="submitted" value="Connexion">
     </form>
 
     <a href="modif-mot-de-passe.php">Mot de passe oublié</a>
