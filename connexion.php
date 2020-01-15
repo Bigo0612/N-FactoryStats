@@ -7,21 +7,20 @@ $errors = array();
 $success = false;
 
 if(!empty($_POST['submitted'])) {
-    // Faille XSS
+
     $email    = trim(strip_tags($_POST['email']));
     $password = trim(strip_tags($_POST['password']));
-
 
     if(empty($email) || empty($password)) {
         $errors['email'] = 'Veuillez renseigner ces champs';
     } else {
-        $sql = "SELECT * FROM users WHERE email = :email = :email";
+        $sql = "SELECT * FROM users WHERE email=:email";
         $query = $pdo->prepare($sql);
         $query -> bindValue(':email',$email,PDO::PARAM_STR);
         $query->execute();
         $user = $query->fetch();
         if(!empty($user)) {
-            //debug($user);
+
             if(password_verify($password,$user['password'])) {
 
                 $_SESSION['email'] = array(
@@ -46,12 +45,12 @@ if(!empty($_POST['submitted'])) {
 
 ?>
 
-    <h1>connection</h1>
+    <h1>connexion</h1>
 
     <form action="connexion.php" method="post">
 
         <label for="email">email</label>
-        <input type="text" name="login" id="email" value="<?php if(!empty($_POST['email']))
+        <input type="text" name="email" id="email" value="<?php if(!empty($_POST['email']))
         { echo $_POST['email']; } ?>">
         <p class="error"><?php if(!empty($errors['email'])) { echo $errors['email']; } ?></p>
 
