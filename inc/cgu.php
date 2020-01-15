@@ -26,7 +26,7 @@ conditions.</p>
 <h3>Article 2 - Evolution et durée des CGU</h3>
 <p>Les présentes conditions générales d'utilisation sont conclues pour une durée indéterminée. Le contrat produit ses effets à
 l'égard de l'Utilisateur à compter du début de l’utilisation du service.
-Le site N'FactorySats se réserve le droit de modifier les clauses de ces conditions générales d’utilisation à tout moment et
+Le site N'FactoryStats se réserve le droit de modifier les clauses de ces conditions générales d’utilisation à tout moment et
 sans justification.</p>
 <h3>Article 3 - Accès au site</h3>
 <p>Tout Utilisateur ayant accès à internet peut accéder gratuitement et depuis n’importe où au site N'FactorySats. Les frais
