@@ -9,10 +9,12 @@ body, html {
     color: #fff;
 }
 
-.wrap {
-    width: 100%;
-    max-width: 1140px;
-    margin: 0 auto;
+.bg-img {
+    background-image: url("../img/main-img.jpeg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 header .logo {
@@ -38,7 +40,7 @@ header nav ul li a {
     color: white;
     padding: 15px 30px;
     border: solid 1.5px #fff;
-    background-color: rgb(0,0,0,0.5);
+    background-color: rgba(0,0,0, 0.5);
     border-radius: 5px;
 }
 
@@ -46,31 +48,26 @@ header nav ul li a:hover{
     color: #008ebf;
 }
 
-
-.main-img {
-    background-image: url("../img/main-img.jpeg");
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.graph-texte {
+    height: 600px;
+    background-color: #fff;
 }
+
 
 .graph-texte img {
     float: right;
     width: 20%;
-    height: 600px;
-    margin-right: 150px;
+    margin: 155px 150px 0 0;
 }
 
 .graph-texte .text-left {
     float: left;
-    margin: 220px 0 0 150px;
+    margin: 195px 0 0 150px;
 }
 
 .graph-texte h2 {
     color: #384141;
     font-size: 3rem;
-
 }
 
 .graph-texte h2 span {
@@ -79,11 +76,79 @@ header nav ul li a:hover{
 
 .graph-texte p {
     float: left;
+    line-height: 25px;
     margin-top: 30px;
     color: #808080;
 }
 
-.utile {
+#fonctionnement {
     height: 600px;
     background-color: #25313C;
+}
+
+.ex img {
+    margin-top: 50px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.simple img, .util img, .pedagogique img {
+    width: 150px;
+    height: 150px;
+}
+
+.ex {
+    float: left;
+    width: 33.33333333333333333333%;
+    margin-top: 152px;
+}
+
+.ex h3 {
+    font-size: 1.8em;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.ex p {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.wrap2 {
+    width: 1100px;
+    margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    color: white;
+    text-align: center;
+    background-color: #25313C;
+    padding-bottom: 3px;
+}
+
+footer p{
+    margin-bottom: 10px;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+    margin-right: 20px;
+}
+
+footer a:hover {
+    color: #008ebf;
 }

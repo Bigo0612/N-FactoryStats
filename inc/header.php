@@ -8,7 +8,6 @@
             echo 'nom du site';
         } ?> </title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700,800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="asset/css/footer.css">
     <link rel="stylesheet" href="asset/css/style.css">
 
 </head>
@@ -29,7 +28,7 @@
     </nav>
 </header>
 
-<div class="main-img"></div>
 
 
-<div id="wrap">
+
+
