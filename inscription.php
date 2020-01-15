@@ -6,26 +6,22 @@ $title = 'inscription';
 $errors = array();
 $success = false;
 
-// traiement de formulaire
-if(!empty($_POST['submitted'])) {
-    //die('ok');
 
-    // Faille XSS
+if(!empty($_POST['submitted'])) {
+
+
+
     $email = trim(strip_tags($_POST['email']));
     $password1 = trim(strip_tags($_POST['password1']));
     $password2 = trim(strip_tags($_POST['password2']));
+    $cgu       = trim(strip_tags((!empty($_POST['cgu'])) ? true : false));
 
 
-/////////////////////////////////
-// Validation
-///////////////////////////////
 
-
-    // email
     if(filter_var($email,FILTER_VALIDATE_EMAIL) === false) {
         $errors['email'] = 'Veuillez renseigner un email valide';
     }else{
-        //no error
+
         $sql = "SELECT id FROM users WHERE email = :mail LIMIT 1";
         $query = $pdo->prepare($sql);
         $query->bindValue(':mail' ,$email,PDO::PARAM_STR);
@@ -35,7 +31,7 @@ if(!empty($_POST['submitted'])) {
             $errors['pseudo'] = 'cet email existe déjà!';
         }
     }
-    // password
+
     if(!empty($password1)) {
         if($password1 != $password2) {
             $errors['password'] = 'Les deux mot de passe doivent être identique';
@@ -46,11 +42,22 @@ if(!empty($_POST['submitted'])) {
         $errors['password'] = 'Veuillez renseigner un mot de passe';
     }
 
+    if (!empty($_POST['cgu']))
+    {
+        echo $_POST['cgu'];
+    }
+    else
+    {
+        $error['cgu'] = 'Veuillez accepter les CGU.';
+    }
+
+
+
     if(count($errors) == 0) {
-        // password hash
+
         $hashpassword = password_hash($password1,PASSWORD_BCRYPT);
         $token = generateRandomString(120);
-        // insert
+
         $sql = "INSERT INTO users VALUES (null,:email,:password,:token,'abonne',NOW())";
         $query = $pdo->prepare($sql);
         $query->bindValue(':email' , $email, PDO::PARAM_STR);
@@ -58,12 +65,11 @@ if(!empty($_POST['submitted'])) {
         $query->bindValue(':token' , $token, PDO::PARAM_STR);
         $query->execute();
         $success = true;
-        // redirection vers la connection
+
         header('location: connexion.php');
     }
 }
-//debug($_POST);
-//debug($errors);
+
 
 ?>
 
@@ -81,6 +87,10 @@ if(!empty($_POST['submitted'])) {
 
         <label for="password2">confirmer mot de passe</label>
         <input type="password" name="password2" id="password2" value="">
+
+        <label for="cgu">CGU</label>
+        <input type="checkbox" name="cgu" id="cgu" value="">
+        <p class="error"><?php if(!empty($errors['cgu'])) { echo $errors['cgu']; } ?></p>
 
         <input type="submit" name="submitted" value="Inscrivez vous">
     </form>
