@@ -70,12 +70,14 @@ if(!empty($_POST['submitted'])) {
     }
 }
 
-
+include('inc/header.php');
 ?>
 
-    <h1>Inscription</h1>
+    <div class="clear"></div>
 
-    <form action="inscription.php" method="post" autocomplete="off">
+    <h1 class="h1form">Inscription</h1>
+
+    <form action="inscription.php" method="post" autocomplete="off" class="formulaires">
 
         <label for="email">Email</label>
         <input type="email" name="email" id="email" value="<?php if(!empty($_POST['email'])) { echo $_POST['email']; } ?>">
@@ -94,6 +96,8 @@ if(!empty($_POST['submitted'])) {
 
         <input type="submit" name="submitted" value="Inscrivez vous">
     </form>
+
+<div class="clear"></div>
 
 
 
