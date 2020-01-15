@@ -14,8 +14,7 @@ if(!empty($_POST['submitted'])) {
     $email = trim(strip_tags($_POST['email']));
     $password1 = trim(strip_tags($_POST['password1']));
     $password2 = trim(strip_tags($_POST['password2']));
-    $cgu       = trim(strip_tags((!empty($_POST['cgu'])) ? true : false));
-
+    $cgu       = trim(strip_tags($_POST['cgu']));
 
 
     if(filter_var($email,FILTER_VALIDATE_EMAIL) === false) {
@@ -42,14 +41,15 @@ if(!empty($_POST['submitted'])) {
         $errors['password'] = 'Veuillez renseigner un mot de passe';
     }
 
-    if (!empty($_POST['cgu']))
-    {
-        echo $_POST['cgu'];
+    if(!empty($_POST['cgu'])) {
+
+    } else {
+        $error['cgu'] = 'Veuillez accepter les Conditions générales d’utilisation.';
     }
-    else
-    {
-        $error['cgu'] = 'Veuillez accepter les CGU.';
-    }
+
+
+
+
 
 
 
@@ -88,7 +88,7 @@ if(!empty($_POST['submitted'])) {
         <label for="password2">confirmer mot de passe</label>
         <input type="password" name="password2" id="password2" value="">
 
-        <label for="cgu">CGU</label>
+        <label for="cgu">Conditions générales d’utilisation</label>
         <input type="checkbox" name="cgu" id="cgu" value="">
         <p class="error"><?php if(!empty($errors['cgu'])) { echo $errors['cgu']; } ?></p>
 
