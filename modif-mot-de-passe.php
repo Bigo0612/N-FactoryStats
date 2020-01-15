@@ -49,19 +49,19 @@ if(!empty($_GET['token']) && !empty($_GET['email'])) {
 }
 
 
-//include('inc/header.php'); ?>
+include('inc/header.php'); ?>
 
     <h1>Modifier votre mot de passe</h1>
 
-    <form action="" method="post">
-        <label for="password1">password</label>
+    <form action="" method="post" class="formulaires">
+        <label for="password1">Mot de passe 1</label>
         <input type="password" name="password1" value="">
         <p class="error"><?php if(!empty($errors['password'])) { echo $errors['password']; } ?></p>
 
-        <label for="password2">password 2</label>
+        <label for="password2">Mot de passe 2</label>
         <input type="password" name="password2" value="">
 
-        <input type="submit" name="submitted" value="envoyer">
+        <input type="submit" name="submitted" value="Envoyer">
     </form>
 
 <?php include('inc/footer.php');

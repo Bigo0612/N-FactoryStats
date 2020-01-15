@@ -42,14 +42,16 @@ if(!empty($_POST['submitted'])) {
     }
 }
 
-
+include('inc/header.php');
 ?>
 
-    <h1>connexion</h1>
+<div class="clear"></div>
 
-    <form action="connexion.php" method="post">
+    <h1 class="h1form">connexion</h1>
 
-        <label for="email">email</label>
+    <form action="connexion.php" method="post" class="formulaires">
+
+        <label for="email">Email</label>
         <input type="text" name="email" id="email" value="<?php if(!empty($_POST['email']))
         { echo $_POST['email']; } ?>">
         <p class="error"><?php if(!empty($errors['email'])) { echo $errors['email']; } ?></p>
@@ -57,8 +59,10 @@ if(!empty($_POST['submitted'])) {
         <label for="password">Mot de passe</label>
         <input type="password" name="password" id="password" value="">
 
-        <input type="submit" name="submitted" value="connexion">
+        <input type="submit" name="submitted" value="Connexion">
     </form>
 
-    <a href="modif-mot-de-passe.php">Mot de passe oublié</a>
+    <a id="mpoublie" href="modif-mot-de-passe.php">Mot de passe oublié</a>
+
+<div class="clear"</div>
 <?php include('inc/footer.php');
