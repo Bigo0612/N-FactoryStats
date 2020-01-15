@@ -62,7 +62,7 @@ include('inc/header.php');
         <input type="submit" name="submitted" value="Connexion">
     </form>
 
-    <a href="modif-mot-de-passe.php">Mot de passe oublié</a>
+    <a id="mpoublie" href="modif-mot-de-passe.php">Mot de passe oublié</a>
 
 <div class="clear"</div>
 <?php include('inc/footer.php');
