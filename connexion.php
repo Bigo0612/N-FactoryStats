@@ -11,6 +11,7 @@ if(!empty($_POST['submitted'])) {
     $email    = trim(strip_tags($_POST['email']));
     $password = trim(strip_tags($_POST['password']));
 
+
     if(empty($email) || empty($password)) {
         $errors['email'] = 'Veuillez renseigner ces champs';
     } else {
