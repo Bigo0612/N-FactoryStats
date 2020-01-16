@@ -1,3 +1,73 @@
+<?php
+session_start();
+require('../inc/pdo.php');
+require('../inc/function.php');
+$title = 'inscription';
+$errors = array();
+$success = false;
+
+
+if(!empty($_POST['submitted'])) {
+
+
+
+    $email = trim(strip_tags($_POST['email']));
+    $password1 = trim(strip_tags($_POST['password1']));
+    $password2 = trim(strip_tags($_POST['password2']));
+    $cgu       = trim(strip_tags($_POST['cgu']));
+
+
+    if(filter_var($email,FILTER_VALIDATE_EMAIL) === false) {
+        $errors['email'] = 'Veuillez renseigner un email valide';
+    }else{
+
+        $sql = "SELECT id FROM users WHERE email = :mail LIMIT 1";
+        $query = $pdo->prepare($sql);
+        $query->bindValue(':mail' ,$email,PDO::PARAM_STR);
+        $query->execute();
+        $verifemail = $query->fetch();
+        if(!empty($verifemail)) {
+            $errors['pseudo'] = 'cet email existe déjà!';
+        }
+    }
+
+    if(!empty($password1)) {
+        if($password1 != $password2) {
+            $errors['password'] = 'Les deux mot de passe doivent être identique';
+        } elseif(mb_strlen($password1) <= 5) {
+            $errors['password'] = 'Min 6 caractères';
+        }
+    }else{
+        $errors['password'] = 'Veuillez renseigner un mot de passe';
+    }
+
+    if(!empty($_POST['cgu'])) {
+
+    } else {
+        $error['cgu'] = 'Veuillez accepter les Conditions générales d’utilisation.';
+    }
+
+
+    if(count($errors) == 0) {
+
+        $hashpassword = password_hash($password1,PASSWORD_BCRYPT);
+        $token = generateRandomString(120);
+
+        $sql = "INSERT INTO users VALUES (null,:email,:password,:token,'abonne',NOW())";
+        $query = $pdo->prepare($sql);
+        $query->bindValue(':email' , $email, PDO::PARAM_STR);
+        $query->bindValue(':password' , $hashpassword, PDO::PARAM_STR);
+        $query->bindValue(':token' , $token, PDO::PARAM_STR);
+        $query->execute();
+        $success = true;
+
+        header('location: connexion.php');
+    }
+}
+
+include('../inc/header.php');
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -9,7 +79,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin - Register</title>
+  <title>Admin N'FactoryStats - Inscription</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -59,7 +129,7 @@
               <div class="col-md-6">
                 <div class="form-label-group">
                   <input type="password" id="confirmPassword" class="form-control" placeholder="Confirmer votre mot de passe" required="required">
-                  <label for="confirmPassword">Confiermer votre mot de passe</label>
+                  <label for="confirmPassword">Confirmer votre mot de passe</label>
                 </div>
               </div>
             </div>
