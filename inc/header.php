@@ -23,11 +23,24 @@
         </a>
         <ul>
             <li><a href="index.php">Accueil</a></li>
+            <?php if(!is_logged()) { ?>
             <li><a href="inscription.php">Inscription</a></li>
             <li><a href="connexion.php">Connexion</a></li>
+            <?php } else { ?>
+                <li><a href="deconnexion.php">Deconnexion</a></li>
+                <li><?php echo $_SESSION['login']['pseudo']; ?></li>
+            <?php } ?>
+            <li><a href="back/index.html">Admin</a></li>
         </ul>
     </nav>
 </header>
+
+
+
+
+
+
+
 
 
 

@@ -58,20 +58,15 @@ function generateRandomString($length = 10) {
 
 function is_logged()
 {
-    //$_SESSION['email'] = array(
-    //'id'    => $user['id'],
-    //'email'=> $user['email'],
-    //'role'  => $user['role'],
-    //'ip'    => $_server['REMOTE_ADDR']
-    //);
-    $roles = array('abonne', 'admin');
-    if(!empty($_SESSION['email'])) {
-        if(!empty($_SESSION['email']['id']) && is_numeric($_SESSION['email']['id'])) {
-            if(!empty($_SESSION['email']['email'])) {
-                if(!empty($_SESSION['email']['role'])) {
-                    if(in_array($_SESSION['email']['role'],$roles)) {
-                        if(!empty($_SESSION['email']['ip'])) {
-                            if($_SESSION['email']['ip'] == $_SERVER['REMOTE_ADDR']){
+    $roles = array('abonne','admin');
+
+    if(!empty($_SESSION['login'])) {
+        if(!empty($_SESSION['login']['id']) && is_numeric($_SESSION['login']['id'])) {
+            if(!empty($_SESSION['login']['pseudo'])) {
+                if(!empty($_SESSION['login']['role'])) {
+                    if(in_array($_SESSION['login']['role'],$roles)) {
+                        if(!empty($_SESSION['login']['ip'])) {
+                            if($_SESSION['login']['ip'] == $_SERVER['REMOTE_ADDR']) {
                                 return true;
                             }
                         }

@@ -30,7 +30,6 @@ if(!empty($_POST['submitted'])) {
                     'ip'    => $_SERVER['REMOTE_ADDR']
                 );
 
-                //debug($session);
                 header('Location: index.php');
 
             } else {
