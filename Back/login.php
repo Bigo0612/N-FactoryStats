@@ -1,3 +1,49 @@
+<?php
+session_start();
+require('../inc/pdo.php');
+require('../inc/function.php');
+$title = 'connexion';
+$errors = array();
+$success = false;
+
+if(!empty($_POST['submitted'])) {
+
+    $email    = trim(strip_tags($_POST['email']));
+    $password = trim(strip_tags($_POST['password']));
+
+    if(empty($email) || empty($password)) {
+        $errors['email'] = 'Veuillez renseigner ces champs';
+    } else {
+        $sql = "SELECT * FROM users WHERE email=:email";
+        $query = $pdo->prepare($sql);
+$query -> bindValue(':email',$email,PDO::PARAM_STR);
+$query->execute();
+$user = $query->fetch();
+if(!empty($user)) {
+
+if(password_verify($password,$user['password'])) {
+
+$_SESSION['email'] = array(
+'id'    => $user['id'],
+'email'=> $user['email'],
+'role'  => $user['role'],
+'ip'    => $_SERVER['REMOTE_ADDR']
+);
+
+header('Location: index.php');
+
+} else {
+$errors['email'] = 'email inconnu ou mot de passe oublié';
+}
+} else {
+$errors['email'] = 'email inconnu';
+}
+}
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -9,7 +55,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin - Login</title>
+  <title>Admin N'FactoryStats - Connexion</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -46,11 +92,11 @@
               </label>
             </div>
           </div>
-          <a class="btn btn-primary btn-block" href="index.html">S'identifier</a>
+          <a class="btn btn-primary btn-block" href="index.php">S'identifier</a>
         </form>
         <div class="text-center">
-          <a class="d-block small mt-3" href="register.html">Créer un compte</a>
-          <a class="d-block small" href="forgot-password.html">Mot de passe oublié?</a>
+          <a class="d-block small mt-3" href="register.php">Créer un compte</a>
+          <a class="d-block small" href="forgot-password.php">Mot de passe oublié?</a>
         </div>
       </div>
     </div>
