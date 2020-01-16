@@ -28,7 +28,7 @@
             <li><a href="connexion.php">Connexion</a></li>
             <?php } else { ?>
                 <li><a href="deconnexion.php">Deconnexion</a></li>
-                <li><?php echo $_SESSION['login']['pseudo']; ?></li>
+                <li><?php echo $_SESSION['email']['email']; ?></li>
             <?php } ?>
             <li><a href="back/index.html">Admin</a></li>
         </ul>
