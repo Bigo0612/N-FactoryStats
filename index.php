@@ -9,7 +9,7 @@ include ('inc/header.php'); ?>
 <div class="bg-img"></div>
 <section class="graph-texte">
     <div class="text-left">
-    <h2>Lets take your <br> <span>Business</span> to Next Level</h2>
+    <h2> <br> <span>Business</span> to Next Level</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>Eos, libero. Lorem ipsum dolor sit amet,<br> consectetur adipisicing elit. Eos, libero</p>
     </div>
     <img src="asset/img/graph.png">
@@ -35,6 +35,32 @@ include ('inc/header.php'); ?>
                 <img src="asset/img/owl.png" alt="logo sécurité">
                 <p>Simple à comprendre</p>
             </div>
+        </div>
+    </section>
+
+    <section id="tronbinoscope">
+        <div class="ava avajan">
+            <h4>Janssen</h4>
+            <img src="asset/img/avatarjanssen.png" alt="avatar Janssen">
+            <p>Chef de projet</p>
+        </div>
+
+        <div class="ava avamel">
+            <h4>Mélanie</h4>
+            <img src="asset/img/avatarmelanie.png" alt="avatar Mélanie">
+            <p>Développeur</p>
+        </div>
+
+        <div class="ava avasof">
+            <h4>Sofien</h4>
+            <img src="asset/img/avatarsofien.png" alt="avatar Sofien">
+            <p>Développeur</p>
+        </div>
+
+        <div class="ava avaste">
+            <h4>Steve</h4>
+            <img src="asset/img/avatarsteve.png" alt="avatar Steve">
+            <p>Développeur</p>
         </div>
     </section>
 
