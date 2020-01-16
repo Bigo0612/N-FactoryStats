@@ -65,7 +65,7 @@ if(!empty($_POST['submitted'])) {
     }
 }
 
-include('../inc/header.php');
+
 ?>
 
 <!DOCTYPE html>
@@ -134,11 +134,11 @@ include('../inc/header.php');
               </div>
             </div>
           </div>
-          <a class="btn btn-primary btn-block" href="login.html">S'inscrire</a>
+          <a class="btn btn-primary btn-block" href="login.php">S'inscrire</a>
         </form>
         <div class="text-center">
-          <a class="d-block small mt-3" href="login.html">Page de connexion</a>
-          <a class="d-block small" href="forgot-password.html">Mot de passe oublié?</a>
+          <a class="d-block small mt-3" href="login.php">Page de connexion</a>
+          <a class="d-block small" href="forgot-password.php">Mot de passe oublié?</a>
         </div>
       </div>
     </div>
