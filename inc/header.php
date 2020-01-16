@@ -23,13 +23,14 @@
         </a>
         <ul>
             <li><a href="index.php">Accueil</a></li>
+            <li><a href="back/index.php">Admin</a></li>
 
             <?php if(!is_logged()) { ?>
             <li><a href="inscription.php">Inscription</a></li>
             <li><a href="connexion.php">Connexion</a></li>
 
             <?php } elseif ($_SESSION['email']['role'] == "admin") { ?>
-                <li><a href="back/index.html">Admin</a></li>
+                <li><a href="back/index.php">Admin</a></li>
 
             <?php } else { ?>
                 <li><a href="deconnexion.php">Deconnexion</a></li>
