@@ -1,4 +1,4 @@
-<?php include "header.php"; ?>
+<?php include "inc/header.php"; ?>
 
 <link rel="stylesheet" href="asset/css/cgu.css">
 
