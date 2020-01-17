@@ -4,6 +4,9 @@
     <list default="true" id="0232fd11-832a-431e-bdbd-e0b989554cfb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/asset/css/connexion.css" beforeDir="false" afterPath="$PROJECT_DIR$/asset/css/connexion.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/connexion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inscription.php" beforeDir="false" afterPath="$PROJECT_DIR$/inscription.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modif-mot-de-passe.php" beforeDir="false" afterPath="$PROJECT_DIR$/modif-mot-de-passe.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,7 +60,8 @@
       <option name="presentableId" value="Default" />
       <updated>1579009452760</updated>
       <workItem from="1579009454812" duration="2089000" />
-      <workItem from="1579094141253" duration="8071000" />
+      <workItem from="1579094141253" duration="8694000" />
+      <workItem from="1579248316328" duration="2362000" />
     </task>
     <task id="LOCAL-00001" summary="Ajout dossier img et reset.css">
       <created>1579009635814</created>
@@ -77,7 +81,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

@@ -54,14 +54,18 @@ include('inc/header.php'); ?>
     <h1>Modifier votre mot de passe</h1>
 
     <form action="" method="post" class="formulaires">
+        <div class="formdiv">
         <label for="password1">Mot de passe 1</label>
         <input type="password" name="password1" value="">
         <p class="error"><?php if(!empty($errors['password'])) { echo $errors['password']; } ?></p>
-
+        </div>
+        <div class="formdiv">
         <label for="password2">Mot de passe 2</label>
         <input type="password" name="password2" value="">
-
+        </div>
+        <div class="formdiv">
         <input type="submit" name="submitted" value="Envoyer">
+        </div>
     </form>
 
 <?php include('inc/footer.php');
