@@ -79,22 +79,28 @@ include('inc/header.php');
 
     <form action="inscription.php" method="post" autocomplete="off" class="formulaires">
 
+        <div class="formdiv">
         <label for="email">Email</label>
         <input type="email" name="email" id="email" value="<?php if(!empty($_POST['email'])) { echo $_POST['email']; } ?>">
         <p class="error"><?php if(!empty($errors['email'])) { echo $errors['email']; } ?></p>
-
+        </div>
+        <div class="formdiv">
         <label for="password1">Mot de passe</label>
         <input type="password" name="password1" id="password1" value="">
         <p class="error"><?php if(!empty($errors['password'])) { echo $errors['password']; } ?></p>
-
+        </div>
+        <div class="formdiv">
         <label for="password2">Confirmer le mot de passe</label>
         <input type="password" name="password2" id="password2" value="">
-
+        </div>
+        <div class="formdiv">
         <label for="cgu">Conditions générales d’utilisation</label>
         <input type="checkbox" name="cgu" id="cgu" value="">
         <p class="error"><?php if(!empty($errors['cgu'])) { echo $errors['cgu']; } ?></p>
-
+        </div>
+        <div class="formdiv">
         <input type="submit" name="submitted" value="Inscrivez vous">
+        </div>
     </form>
 
 <div class="clear"></div>
