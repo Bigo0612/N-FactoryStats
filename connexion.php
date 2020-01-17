@@ -30,7 +30,6 @@ if(!empty($_POST['submitted'])) {
                     'ip'    => $_SERVER['REMOTE_ADDR']
                 );
 
-                //debug($session);
                 header('Location: index.php');
 
             } else {
@@ -62,7 +61,7 @@ include('inc/header.php');
         <input type="submit" name="submitted" value="Connexion">
     </form>
 
-    <a id="mpoublie" href="modif-mot-de-passe.php">Mot de passe oublié</a>
+    <a id="mpoublie" href="mot-de-passe-oublie.php">Mot de passe oublié</a>
 
 <div class="clear"</div>
 <?php include('inc/footer.php');

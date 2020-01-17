@@ -1,4 +1,9 @@
 <?php
+session_start();
+require('inc/pdo.php');
+require('inc/function.php');
+$title = 'Home page';
+
 
 include('inc/header.php'); ?>
     <div class="bg-img"></div>
