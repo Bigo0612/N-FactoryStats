@@ -7,7 +7,7 @@
 
 
     <h1>Conditions générales d'utilisation
-        du site N'FactoryStats</h1>
+        du site NFactory Stats</h1>
     <h2>Préambule</h2>
     <p>Les présentes conditions générales d'utilisation sont conclues entre :</p>
     <p>- le gérant du site internet, ci-après désigné « l’Éditeur »,</p>
@@ -148,3 +148,8 @@
     <p>Les présentes conditions générales d'utilisation sont soumises à l'application du droit français.
         Si les parties n'arrivent pas à résoudre un litige à l'amiable, le litige sera soumis à la compétence des tribunaux français.</p>
 
+
+
+    <a href="inscription.php?condition=yes"><input id="but" type="button" value="Accepter" name="accepter"></a>
+
+</div>
