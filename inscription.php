@@ -94,7 +94,7 @@ include('inc/header.php');
         <input type="password" name="password2" id="password2" value="">
         </div>
         <div class="formdiv">
-        <label for="cgu">Conditions générales d’utilisation</label>
+            <a href="cgu.php"><label for="cgu">Conditions générales d’utilisation</label></a>
         <input type="checkbox" name="cgu" id="cgu" value="yes">
         <p class="error"><?php if(!empty($errors['cgu'])) { echo $errors['cgu']; } ?></p>
         </div>
