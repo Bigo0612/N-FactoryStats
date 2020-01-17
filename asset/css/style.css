@@ -90,7 +90,7 @@ header nav ul li a:hover{
     display: block;
     margin-right: auto;
     margin-left: auto;
-    width: 10%;
+    width: 40%;
 }
 
 .ex {
@@ -100,7 +100,7 @@ header nav ul li a:hover{
 }
 
 .ex h3 {
-    font-size: 1.8em;
+    font-size: 1.8vw;
     text-transform: uppercase;
     text-align: center;
 }
@@ -169,11 +169,68 @@ footer a:hover {
 }
 
 @media screen and (max-width: 1100px){
+
+    .exterieur {
+        padding: 30px;
+    }
+
+    .graph-texte .text-left {
+        margin: 0 auto;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+    }
+
     .graph-texte h2 {
-        font-size: 5.5vw;
+        font-size: 5vw;
     }
     .graph-texte p {
-        font-size: 1.8vw;
+        font-size: 1.5vw;
+        width: 100%;
+        text-align: center;
+    }
+
+    .graph-texte img {
+        width: 20%;
+        float: none;
+        margin: 50px 0 0 0;
+    }
+
+}
+
+@media screen and (max-width: 900px){
+    .graph-texte img {
+        width: 30%;
+    }
+
+    .ex img {
+        margin-top: 50px;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        width: 30%;
+    }
+
+    .ex {
+        float: left;
+        width: 25%;
+        margin-top: 152px;
+    }
+
+    .ex h3 {
+        font-size: 3vw;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .ex p {
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    .wrap2 {
+        width: 900px;
+        margin: 0 auto;
     }
 
 }
