@@ -1,4 +1,4 @@
-<?php include "inc/header.php"; ?>
+
 
 <link rel="stylesheet" href="asset/css/Mentions-legales.css">
 
