@@ -13,7 +13,7 @@
     <p>- le gérant du site internet, ci-après désigné « l’Éditeur »,</p>
     <p>- toute personne souhaitant accéder au site et à ses services, ci-après appelé « l’Utilisateur ».</p>
     <h3>Article 1 - Principes</h3>
-    <p>Les présentes conditions générales d'utilisation ont pour objet l'encadrement juridique de l’utilisation du site N'FactorySats
+    <p>Les présentes conditions générales d'utilisation ont pour objet l'encadrement juridique de l’utilisation du site N'FactoryStats
         et de ses services.
         Le site Internet <a href="#">www.N'FactoryStats.com</a> est un service de :
         L'entreprise individuelle N'FactoryStats
@@ -29,7 +29,7 @@
         Le site N'FactoryStats se réserve le droit de modifier les clauses de ces conditions générales d’utilisation à tout moment et
         sans justification.</p>
     <h3>Article 3 - Accès au site</h3>
-    <p>Tout Utilisateur ayant accès à internet peut accéder gratuitement et depuis n’importe où au site N'FactorySats. Les frais
+    <p>Tout Utilisateur ayant accès à internet peut accéder gratuitement et depuis n’importe où au site N'FactoryStats. Les frais
         supportés par l’Utilisateur pour y accéder (connexion internet, matériel informatique, etc.) ne sont pas à la charge de l’
         Éditeur.</p>
     <p>Le site et ses différents services peuvent être interrompus ou suspendus par l’Éditeur, notamment à l’occasion d’une
@@ -140,7 +140,7 @@
         l'utilisateur n'est pas d'accord avec les termes de la nouvelle rédaction de la clause de protection des données à caractère
         personnel, il a la possibilité de supprimer son compte.</p>
     <h3>Article 8 - Cookies</h3>
-    <p>Le site N'FactorySats peut collecter automatiquement des informations standards. Toutes les informations collectées
+    <p>Le site N'FactoryStats peut collecter automatiquement des informations standards. Toutes les informations collectées
         indirectement ne seront utilisées que pour suivre le volume, le type et la configuration du trafic utilisant ce site, pour en
         développer la conception et l'agencement et à d'autres fins administratives et de planification et plus généralement pour
         améliorer le service que nous vous offrons.</p>
