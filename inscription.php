@@ -40,13 +40,13 @@ if(!empty($_POST['submitted'])) {
     }else{
         $errors['password'] = 'Veuillez renseigner un mot de passe';
     }
-
-    if(!empty($_POST['cgu'])) {
+    //debug ($_POST);
+    //die();
+    if(!empty($_POST['cgu']) && $_POST['cgu']) {
 
     } else {
-        $error['cgu'] = 'Veuillez accepter les Conditions générales d’utilisation.';
+        $errors['cgu'] = 'Veuillez accepter les Conditions générales d’utilisation.';
     }
-
 
 
 
@@ -95,7 +95,7 @@ include('inc/header.php');
         </div>
         <div class="formdiv">
         <label for="cgu">Conditions générales d’utilisation</label>
-        <input type="checkbox" name="cgu" id="cgu" value="">
+        <input type="checkbox" name="cgu" id="cgu" value="yes">
         <p class="error"><?php if(!empty($errors['cgu'])) { echo $errors['cgu']; } ?></p>
         </div>
         <div class="formdiv">
