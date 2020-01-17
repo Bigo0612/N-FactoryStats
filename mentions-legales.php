@@ -1,6 +1,6 @@
 <?php include "header.php"; ?>
 
-<link rel="stylesheet" href="asset/css/Mentions-légales.css">
+<link rel="stylesheet" href="asset/css/Mentions-legales.css">
 
 <div class="Mentions-légales">
 
