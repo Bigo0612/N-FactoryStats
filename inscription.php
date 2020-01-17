@@ -94,12 +94,12 @@ include('inc/header.php');
         <input type="password" name="password2" id="password2" value="">
         </div>
         <div class="formdiv">
-            <a href="cgu.php"><label for="cgu">Conditions générales d’utilisation</label></a>
-        <input type="checkbox" name="cgu" id="cgu" value="yes">
+            <a href="cgu.php">Conditions générales d’utilisation</a>
+        <input type="checkbox" name="cgu" id="cgu" value="yes" <?php  if(!empty($_GET['condition'])) {if($_GET['condition'] == 'yes') {echo 'checked';}} ?>>
         <p class="error"><?php if(!empty($errors['cgu'])) { echo $errors['cgu']; } ?></p>
         </div>
         <div class="formdiv">
-        <input type="submit" name="submitted" value="Inscrivez vous">
+        <input id="susub" type="submit" name="submitted" value="Inscrivez vous">
         </div>
     </form>
 

@@ -34,14 +34,13 @@ if (!empty($_POST['submitted'])) {
 include ('inc/header.php'); ?>
 
 
-    <h1>Changer votre mot de passe</h1>
-
-    <form action="" method="post">
+    <h2 id="modmp">Modification du mot de passe</h2>
+    <form action="" method="post" class="formulaires">
         <label for="email">Email *</label>
         <input type="email" name="email" id="email" value="<?php if (!empty($_POST['email'])) { echo $_POST['email'];}?>">
         <p class="error"><?php if (!empty($errors['email'])) { echo $errors['email']; } ?></p>
 
-        <input type="submit" name="submitted" value="Modifier votre mot de passe">
+        <input id="submp" type="submit" name="submitted" value="Modifier votre mot de passe">
     </form>
 
 
