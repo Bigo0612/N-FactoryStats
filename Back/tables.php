@@ -1,3 +1,78 @@
+<?php
+session_start();
+require('../inc/pdo.php');
+require('../inc/function.php');
+$title = 'inscription';
+$errors = array();
+$success = false;
+
+
+if(!empty($_POST['submitted'])) {
+
+
+
+    $email = trim(strip_tags($_POST['email']));
+    $password1 = trim(strip_tags($_POST['password1']));
+    $password2 = trim(strip_tags($_POST['password2']));
+    $cgu       = trim(strip_tags($_POST['cgu']));
+
+
+    if(filter_var($email,FILTER_VALIDATE_EMAIL) === false) {
+        $errors['email'] = 'Veuillez renseigner un email valide';
+    }else{
+
+        $sql = "SELECT id FROM users WHERE email = :mail LIMIT 1";
+        $query = $pdo->prepare($sql);
+        $query->bindValue(':mail' ,$email,PDO::PARAM_STR);
+        $query->execute();
+        $verifemail = $query->fetch();
+        if(!empty($verifemail)) {
+            $errors['pseudo'] = 'cet email existe déjà!';
+        }
+    }
+
+    if(!empty($password1)) {
+        if($password1 != $password2) {
+            $errors['password'] = 'Les deux mot de passe doivent être identique';
+        } elseif(mb_strlen($password1) <= 5) {
+            $errors['password'] = 'Min 6 caractères';
+        }
+    }else{
+        $errors['password'] = 'Veuillez renseigner un mot de passe';
+    }
+
+    if(!empty($_POST['cgu'])) {
+
+    } else {
+        $error['cgu'] = 'Veuillez accepter les Conditions générales d’utilisation.';
+    }
+
+
+
+
+
+
+
+    if(count($errors) == 0) {
+
+        $hashpassword = password_hash($password1,PASSWORD_BCRYPT);
+        $token = generateRandomString(120);
+
+        $sql = "INSERT INTO users VALUES (null,:email,:password,:token,'abonne',NOW())";
+        $query = $pdo->prepare($sql);
+        $query->bindValue(':email' , $email, PDO::PARAM_STR);
+        $query->bindValue(':password' , $hashpassword, PDO::PARAM_STR);
+        $query->bindValue(':token' , $token, PDO::PARAM_STR);
+        $query->execute();
+        $success = true;
+
+        header('location: connexion.php');
+    }
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -9,7 +84,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin - Tables</title>
+  <title>Admin N'FactoryShool - Tables</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -26,7 +101,7 @@
 
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-    <a class="navbar-brand mr-1" href="index.html">N'FactoryStats</a>
+    <a class="navbar-brand mr-1" href="index.php">N'FactoryStats</a>
 
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
       <i class="fas fa-bars"></i>
@@ -35,7 +110,7 @@
     <!-- Navbar Search -->
     <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
       <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+        <input type="text" class="form-control" placeholder="Rechercher..." aria-label="Search" aria-describedby="basic-addon2">
         <div class="input-group-append">
           <button class="btn btn-primary" type="button">
             <i class="fas fa-search"></i>
@@ -53,9 +128,9 @@
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="alertsDropdown">
           <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">autre action</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item" href="#">Quelque chose d'autre ici</a>
         </div>
       </li>
       <li class="nav-item dropdown no-arrow mx-1">
@@ -65,9 +140,9 @@
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="messagesDropdown">
           <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">autre action</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item" href="#">Quelque chose d'autre ici</a>
         </div>
       </li>
       <li class="nav-item dropdown no-arrow">
@@ -75,10 +150,10 @@
           <i class="fas fa-user-circle fa-fw"></i>
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-          <a class="dropdown-item" href="#">Settings</a>
-          <a class="dropdown-item" href="#">Activity Log</a>
+          <a class="dropdown-item" href="#">Réglages</a>
+          <a class="dropdown-item" href="#">Journal d'activité</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
+          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Se déconnecter</a>
         </div>
       </li>
     </ul>
@@ -90,9 +165,9 @@
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="index.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span>
+          <span>Tableau de bord</span>
         </a>
       </li>
       <li class="nav-item dropdown">
@@ -101,23 +176,14 @@
           <span>Pages</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-          <h6 class="dropdown-header">Login Screens:</h6>
-          <a class="dropdown-item" href="login.html">Login</a>
-          <a class="dropdown-item" href="register.html">Register</a>
-          <a class="dropdown-item" href="forgot-password.html">Forgot Password</a>
-          <div class="dropdown-divider"></div>
-          <h6 class="dropdown-header">Other Pages:</h6>
-          <a class="dropdown-item" href="404.html">404 Page</a>
-          <a class="dropdown-item" href="blank.html">Blank Page</a>
-        </div>
+          <h6 class="dropdown-header">Écrans de connexion:</h6>
+          <a class="dropdown-item" href="login.php">S'identifier</a>
+          <a class="dropdown-item" href="register.php">S'inscrire</a>
+          <a class="dropdown-item" href="forgot-password.php">Mot de passe oublié</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Charts</span></a>
-      </li>
+
       <li class="nav-item active">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="tables.php">
           <i class="fas fa-fw fa-table"></i>
           <span>Tables</span></a>
       </li>
@@ -130,7 +196,7 @@
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="#">Dashboard</a>
+            <a href="#">Tableau de bord</a>
           </li>
           <li class="breadcrumb-item active">Tables</li>
         </ol>
@@ -159,17 +225,16 @@
                   </tr>
                 </tfoot>
                 <tbody>
+                <?php
+                echo '<tr>';
+                for ($i = 0; $i < count($user); $i++) {
+                    echo '<td>' . $user[$i]['id'] . '</td>';
+                    echo '<td>' . $user[$i]['email'] . '</td>';
+                    echo '<td>' . $user[$i]['role'] . '</td>';
+                    echo '<td>' . $user[$i]['created_at'] . '</td>';
+                    echo '</tr>';
+                }?>
 
-                  <tr>
-                    <td>1</td>
-                    <td>Michel@gmail.com</td>
-                    <td>2020/01/15</td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>Bigo@gmail.com</td>
-                    <td>2020/01/15</td>
-                  </tr>
                 </tbody>
               </table>
             </div>
@@ -205,15 +270,15 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Prêt à partir?</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-body">Sélectionnez "Déconnexion" ci-dessous si vous êtes prêt à terminer votre session en cours.</div>
         <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
+          <a class="btn btn-primary" href="login.php">Se déconnecter</a>
         </div>
       </div>
     </div>
