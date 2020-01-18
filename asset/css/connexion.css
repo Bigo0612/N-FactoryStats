@@ -1,24 +1,24 @@
 .formulaires {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
     width: 50%;
     max-width: 400px;
-    padding: 10px;
     background-color: white;
     margin-top: 120px;
 
+}
+.formulaires .formdiv {
+    margin-bottom: 20px;
 }
 
 .formulaires label {
     font-size: 0.8em;
     color: #008ebf;
+    margin-top: 180px;
 }
 
-.formulaires input[type=text], .formulaires input[type=password] {
+.formulaires input[type=text], .formulaires input[type=password], .formulaires input[type=email] {
     width: 100%;
     padding: 15px;
-    margin: 5px 0 22px 0;
     border: none;
     background: #f1f1f1;
 }
@@ -26,22 +26,16 @@
 .formulaires input[type=submit] {
     width: 100%;
     padding: 15px;
-    margin: 5px 0 22px 0;
     border: none;
     background: #f1f1f1;
     color: dimgrey;
     font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 40px;
 
 }
 
-.formulaires input[type=email] {
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    border: none;
-    background: #f1f1f1;
 
-}
 
 #mpoublie {
     font-weight: bold;
@@ -51,13 +45,32 @@
     margin-left: auto;
     margin-right: auto;
     width: 9%;
-    margin-bottom: 70px;
-
-
+    margin-bottom: 145px;
 }
+
+#susub {
+    margin-bottom: 80px;
+}
+
+#submp {
+    margin-bottom: 200px;
+}
+
 
 .formulaires p {
     color: red;
     font-size: 0.7em;
 
+}
+
+.formulaires a {
+    font-size: 0.8em;
+    color: #008ebf;
+}
+
+h2#modmp {
+    color: lightseagreen;
+    margin-top: 190px;
+    text-align: center;
+    font-weight: bold;
 }

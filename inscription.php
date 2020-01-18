@@ -40,13 +40,13 @@ if(!empty($_POST['submitted'])) {
     }else{
         $errors['password'] = 'Veuillez renseigner un mot de passe';
     }
-
-    if(!empty($_POST['cgu'])) {
+    //debug ($_POST);
+    //die();
+    if(!empty($_POST['cgu']) && $_POST['cgu']) {
 
     } else {
-        $error['cgu'] = 'Veuillez accepter les Conditions générales d’utilisation.';
+        $errors['cgu'] = 'Veuillez accepter les Conditions générales d’utilisation.';
     }
-
 
 
 
@@ -79,22 +79,28 @@ include('inc/header.php');
 
     <form action="inscription.php" method="post" autocomplete="off" class="formulaires">
 
+        <div class="formdiv">
         <label for="email">Email</label>
         <input type="email" name="email" id="email" value="<?php if(!empty($_POST['email'])) { echo $_POST['email']; } ?>">
         <p class="error"><?php if(!empty($errors['email'])) { echo $errors['email']; } ?></p>
-
+        </div>
+        <div class="formdiv">
         <label for="password1">Mot de passe</label>
         <input type="password" name="password1" id="password1" value="">
         <p class="error"><?php if(!empty($errors['password'])) { echo $errors['password']; } ?></p>
-
+        </div>
+        <div class="formdiv">
         <label for="password2">Confirmer le mot de passe</label>
         <input type="password" name="password2" id="password2" value="">
-
-        <label for="cgu">Conditions générales d’utilisation</label>
-        <input type="checkbox" name="cgu" id="cgu" value="">
+        </div>
+        <div class="formdiv">
+            <a href="cgu.php">Conditions générales d’utilisation</a>
+        <input type="checkbox" name="cgu" id="cgu" value="yes" <?php  if(!empty($_GET['condition'])) {if($_GET['condition'] == 'yes') {echo 'checked';}} ?>>
         <p class="error"><?php if(!empty($errors['cgu'])) { echo $errors['cgu']; } ?></p>
-
-        <input type="submit" name="submitted" value="Inscrivez vous">
+        </div>
+        <div class="formdiv">
+        <input id="susub" type="submit" name="submitted" value="Inscrivez vous">
+        </div>
     </form>
 
 <div class="clear"></div>
