@@ -17,28 +17,40 @@
 <body>
 
 <header>
-    <nav class="navbar">
-        <a href="index.php">
-            <img class="logo" src="asset/img/logo1.png" alt="logo Nfactory Stats">
-        </a>
-        <ul>
-            <li><a href="index.php">Accueil</a></li>
-            <li><a href="back/index.php">Admin</a></li>
+    <div id="hamburger">
+        <div id="hamburger-content">
+            <nav class="navbar">
+                <a href="index.php">
+                    <img class="logo" src="asset/img/logo1.png" alt="logo Nfactory Stats">
+                </a>
+                <ul>
+                    <li><a href="index.php">Accueil</a></li>
+                    <li><a href="stats1.php">stats1</a></li>
+                    <li><a href="back/index.php">Admin</a></li>
 
-            <?php if(!is_logged()) { ?>
-            <li><a href="inscription.php">Inscription</a></li>
-            <li><a href="connexion.php">Connexion</a></li>
+                    <?php if (!is_logged()) { ?>
+                        <li><a href="inscription.php">Inscription</a></li>
+                        <li><a href="connexion.php">Connexion</a></li>
 
-            <?php } elseif ($_SESSION['email']['role'] == "admin") { ?>
-                <li><a href="back/index.php">Admin</a></li>
+                    <?php } elseif ($_SESSION['email']['role'] == "admin") { ?>
+                        <li><a href="back/index.php">Admin</a></li>
 
-            <?php } else { ?>
-                <li><a href="deconnexion.php">Deconnexion</a></li>
-            <li><?php echo $_SESSION['email']['email']; ?></li>
-            <?php } ?>
-        </ul>
-    </nav>
+                    <?php } else { ?>
+                        <li><a href="deconnexion.php">Deconnexion</a></li>
+                        <li><?php echo $_SESSION['email']['email']; ?></li>
+                    <?php } ?>
+                </ul>
+            </nav>
+        </div>
+        <button id="hamburger-button">&#9776</button>
+        <div id="hamburger-sidebar">
+            <div id="hamburger-sidebar-header"></div>
+            <div id="hamburger-sidebar-body"></div>
+        </div>
+        <div id="hamburger-overlay"></div>
+    </div>
 </header>
+
 
 
 

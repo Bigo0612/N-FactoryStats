@@ -13,7 +13,6 @@ include('inc/header.php'); ?>
                 <h2><br> <span>Business</span> to Next Level</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>Eos, libero. Lorem ipsum dolor sit
                     amet,<br> consectetur adipisicing elit. Eos, libero</p>
-
             </div>
             <img src="asset/img/graph.png">
         </div>
