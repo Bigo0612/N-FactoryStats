@@ -33,6 +33,8 @@
 
                     <?php } elseif ($_SESSION['email']['role'] == "admin") { ?>
                         <li><a href="back/index.php">Admin</a></li>
+                        <li><a href="stats1.php">stats1</a></li>
+                        <li><a href="deconnexion.php">Deconnexion</a></li>
 
                     <?php } else { ?>
                         <li><a href="stats1.php">stats1</a></li>
