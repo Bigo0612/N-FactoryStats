@@ -2,19 +2,26 @@
 session_start();
 require('../inc/pdo.php');
 require('../inc/function.php');
-$title = 'inscription';
+
 $errors = array();
 $success = false;
+
+$sql = "SELECT * from users WHERE 1";
+$query = $pdo->prepare($sql);
+$query->execute();
+$users = $query->fetchALL();
+
+$sql = "SELECT * FROM users";
+$query = $pdo->prepare($sql);
+$query->execute();
+$user = $query->fetchAll();
 
 
 if(!empty($_POST['submitted'])) {
 
-
-
     $email = trim(strip_tags($_POST['email']));
     $password1 = trim(strip_tags($_POST['password1']));
     $password2 = trim(strip_tags($_POST['password2']));
-    $cgu       = trim(strip_tags($_POST['cgu']));
 
 
     if(filter_var($email,FILTER_VALIDATE_EMAIL) === false) {
@@ -41,17 +48,6 @@ if(!empty($_POST['submitted'])) {
         $errors['password'] = 'Veuillez renseigner un mot de passe';
     }
 
-    if(!empty($_POST['cgu'])) {
-
-    } else {
-        $error['cgu'] = 'Veuillez accepter les Conditions générales d’utilisation.';
-    }
-
-
-
-
-
-
 
     if(count($errors) == 0) {
 
@@ -66,11 +62,17 @@ if(!empty($_POST['submitted'])) {
         $query->execute();
         $success = true;
 
-        header('location: connexion.php');
+        header('location: tables.php');
     }
 }
 
-
+if (!empty($_POST['desactive'])) {
+    $i= 0;
+    $id = $user[$i]['id'];
+    $sql = "DELETE FROM users WHERE  id = $id";
+    $query = $pdo->prepare($sql);
+    $query->execute();
+}
 ?>
 
 <!DOCTYPE html>
@@ -124,35 +126,23 @@ if(!empty($_POST['submitted'])) {
       <li class="nav-item dropdown no-arrow mx-1">
         <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-bell fa-fw"></i>
-          <span class="badge badge-danger">9+</span>
+          <span class="badge badge-danger"></span>
         </a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="alertsDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">autre action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Quelque chose d'autre ici</a>
-        </div>
+
       </li>
       <li class="nav-item dropdown no-arrow mx-1">
         <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-envelope fa-fw"></i>
-          <span class="badge badge-danger">7</span>
+          <span class="badge badge-danger"></span>
         </a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="messagesDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">autre action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Quelque chose d'autre ici</a>
-        </div>
+
       </li>
       <li class="nav-item dropdown no-arrow">
         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-user-circle fa-fw"></i>
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-          <a class="dropdown-item" href="#">Réglages</a>
-          <a class="dropdown-item" href="#">Journal d'activité</a>
-          <div class="dropdown-divider"></div>
+          
           <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Se déconnecter</a>
         </div>
       </li>
@@ -202,57 +192,95 @@ if(!empty($_POST['submitted'])) {
         </ol>
 
         <!-- DataTables Example -->
-        <div class="card mb-3">
-          <div class="card-header">
-            <i class="fas fa-table"></i>
 
-            Tableau de données</div>
-          <div class="card-body">
-            <div class="table-responsive">
-              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead>
-                  <tr>
-                    <th>Id</th>
-                    <th>Email</th>
-                    <th>Date</th>
-                  </tr>
-                </thead>
-                <tfoot>
-                  <tr>
-                    <th>Id</th>
-                    <th>Email</th>
-                    <th>Date</th>
-                  </tr>
-                </tfoot>
-                <tbody>
-                <?php
-                echo '<tr>';
-                for ($i = 0; $i < count($user); $i++) {
-                    echo '<td>' . $user[$i]['id'] . '</td>';
-                    echo '<td>' . $user[$i]['email'] . '</td>';
-                    echo '<td>' . $user[$i]['role'] . '</td>';
-                    echo '<td>' . $user[$i]['created_at'] . '</td>';
-                    echo '</tr>';
-                }?>
+              <h2>désactiver un utilisateur:</h2>
 
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div class="card-footer small text-muted">Mis à jour hier à 23h59</div>
-        </div>
+              <div class="card mb-4">
+                  <div class="card-header">
+                      <i class="fas fa-table"></i>
 
+                      Tableau de données</div>
+                  <div class="card-body">
+                      <div class="table-responsive">
+                          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                              <thead>
+                              <tr>
+                                  <th>Id</th>
+                                  <th>Email</th>
+                                  <th>role</th>
+                                  <th>Date</th>
+                              </tr>
+                              </thead>
+                              <tfoot>
+                              <tr>
+                                  <th>Id</th>
+                                  <th>Email</th>
+                                  <th>role</th>
+                                  <th>Date</th>
+                              </tr>
+                              </tfoot>
+                              <tbody>
+                              <?php
+                              echo '<tr>'; ?>
+                              <form action="tables.php" name="desactive" method="post"> <?php
+                                  for ($i = 0; $i < count($user); $i++) {
+                                  echo '<td>' . $user[$i]['id'] . '</td>';
+                                  echo '<td>' . $user[$i]['email'] . '</td>';
+                                  echo '<td>' . $user[$i]['role'] . '</td>';
+                                  echo '<td>' . $user[$i]['created_at'] . '</td>';
+                                  echo '<td>' . '<input type="submit" name="desactive" id="' . $user[$i]['id'] . '" value="desactiver ' . $user[$i]['id'] . '">'.'</td>';
+                                  ?>
+                              </form> <?php
+                              echo '</tr>';} ?>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
 
+                  <h2>Edition d'un utilisateur:</h2>
 
-      </div>
+                  <div class="card mb-5">
+                      <div class="card-header">
+                          <i class="fas fa-table"></i>
 
-      <footer class="sticky-footer">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>&copy; 2020 - N'FactoryStats &reg;</span>
-          </div>
-        </div>
-      </footer>
+                          Tableau de données</div>
+                      <div class="card-body">
+                          <div class="table-responsive">
+                              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                  <thead>
+                                  <tr>
+                                      <th>Email</th>
+                                      <th>Role</th>
+                                      <th>Edition</th>
+                                  </tr>
+                                  </thead>
+                                  <tbody>
+                                  <?php foreach ($users as $key => $user): ?>
+                                      <tr>
+                                          <td><?php echo $user['email']; ?></td>
+                                          <td><?php echo $user['role'] ?></td>
+                                          <td><a class="btn btn-success"href="edit_user.php?id=<?php echo $user['id'] ?>">EDITION</a></td>
+                                      </tr>
+                                  <?php endforeach; ?>
+                                  </tbody>
+                              </table>
+                          </div>
+                      </div>
+
+        <div class="card-footer small text-muted">Mis à jour hier à 23h59</div>
+                  </div>
+
+              </div>
+          <!-- /.container-fluid -->
+
+          <!-- Sticky Footer -->
+          <footer class="sticky-footer">
+              <div class="container my-auto">
+                  <div class="copyright text-center my-auto">
+                      <span>&copy; 2020 - N'FactoryStats &reg;</span>
+                  </div>
+              </div>
+          </footer>
 
     </div>
     <!-- /.content-wrapper -->
