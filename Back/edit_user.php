@@ -149,11 +149,6 @@ if(!empty($_GET['id']) && is_numeric($_GET['id'])) {
                     <a class="dropdown-item" href="forgot-password.php">Mot de passe oublié</a>
             </li>
 
-            <li class="nav-item active">
-                <a class="nav-link" href="tables.php">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
-            </li>
         </ul>
 
         <div id="content-wrapper">
