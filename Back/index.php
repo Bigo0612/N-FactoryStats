@@ -1,4 +1,79 @@
+<?php
+session_start();
+require('../inc/pdo.php');
+require('../inc/function.php');
 
+$errors = array();
+$success = false;
+
+$sql = "SELECT * from users WHERE 1";
+$query = $pdo->prepare($sql);
+$query->execute();
+$users = $query->fetchALL();
+
+$sql = "SELECT * FROM users";
+$query = $pdo->prepare($sql);
+$query->execute();
+$user = $query->fetchAll();
+
+
+if(!empty($_POST['submitted'])) {
+
+    $email = trim(strip_tags($_POST['email']));
+    $password1 = trim(strip_tags($_POST['password1']));
+    $password2 = trim(strip_tags($_POST['password2']));
+
+
+    if(filter_var($email,FILTER_VALIDATE_EMAIL) === false) {
+        $errors['email'] = 'Veuillez renseigner un email valide';
+    }else{
+
+        $sql = "SELECT id FROM users WHERE email = :mail LIMIT 1";
+        $query = $pdo->prepare($sql);
+        $query->bindValue(':mail' ,$email,PDO::PARAM_STR);
+        $query->execute();
+        $verifemail = $query->fetch();
+        if(!empty($verifemail)) {
+            $errors['pseudo'] = 'cet email existe déjà!';
+        }
+    }
+
+    if(!empty($password1)) {
+        if($password1 != $password2) {
+            $errors['password'] = 'Les deux mot de passe doivent être identique';
+        } elseif(mb_strlen($password1) <= 5) {
+            $errors['password'] = 'Min 6 caractères';
+        }
+    }else{
+        $errors['password'] = 'Veuillez renseigner un mot de passe';
+    }
+
+
+    if(count($errors) == 0) {
+
+        $hashpassword = password_hash($password1,PASSWORD_BCRYPT);
+        $token = generateRandomString(120);
+
+        $sql = "INSERT INTO users VALUES (null,:email,:password,:token,'abonne',NOW())";
+        $query = $pdo->prepare($sql);
+        $query->bindValue(':email' , $email, PDO::PARAM_STR);
+        $query->bindValue(':password' , $hashpassword, PDO::PARAM_STR);
+        $query->bindValue(':token' , $token, PDO::PARAM_STR);
+        $query->execute();
+        $success = true;
+
+        header('location: tables.php');
+    }
+}
+
+if (!empty($_POST['desactive'])) {
+    $i= 0;
+    $id = $user[$i]['id'];
+    $sql = "DELETE FROM users WHERE  id = $id";
+    $query = $pdo->prepare($sql);
+    $query->execute();
+}
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -97,11 +172,7 @@
         </div>
       </li>
 
-      <li class="nav-item">
-        <a class="nav-link" href="tables.php">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Tables</span></a>
-      </li>
+
     </ul>
 
     <div id="content-wrapper">
@@ -113,65 +184,90 @@
           <li class="breadcrumb-item">
             <a href="#">Tableau de bord</a>
           </li>
-          <li class="breadcrumb-item active">Aperçu</li>
+          <li class="breadcrumb-item active">Tables</li>
         </ol>
 
 
 
-        <!-- Area Chart Example-->
-        <div class="card mb-3">
-          <div class="card-header">
-            <i class="fas fa-chart-area"></i>
-              graphique de zone</div>
-          <div class="card-body">
-            <canvas id="myAreaChart" width="100%" height="30"></canvas>
+
+          <h2>désactiver un utilisateur:</h2>
+
+          <div class="card mb-4">
+              <div class="card-header">
+                  <i class="fas fa-table"></i>
+
+                  Tableau de données</div>
+              <div class="card-body">
+                  <div class="table-responsive">
+                      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                          <thead>
+                          <tr>
+                              <th>Id</th>
+                              <th>Email</th>
+                              <th>role</th>
+                              <th>Date</th>
+                          </tr>
+                          </thead>
+                          <tfoot>
+                          <tr>
+                              <th>Id</th>
+                              <th>Email</th>
+                              <th>role</th>
+                              <th>Date</th>
+                          </tr>
+                          </tfoot>
+                          <tbody>
+                          <?php
+                          echo '<tr>'; ?>
+                          <form action="tables.php" name="desactive" method="post"> <?php
+                              for ($i = 0; $i < count($user); $i++) {
+                              echo '<td>' . $user[$i]['id'] . '</td>';
+                              echo '<td>' . $user[$i]['email'] . '</td>';
+                              echo '<td>' . $user[$i]['role'] . '</td>';
+                              echo '<td>' . $user[$i]['created_at'] . '</td>';
+                              echo '<td>' . '<input type="submit" name="desactive" id="' . $user[$i]['id'] . '" value="desactiver ' . $user[$i]['id'] . '">'.'</td>';
+                              ?>
+                          </form> <?php
+                          echo '</tr>';} ?>
+                          </tbody>
+                      </table>
+                  </div>
+              </div>
+
+              <h2>Edition d'un utilisateur:</h2>
+
+              <div class="card mb-5">
+                  <div class="card-header">
+                      <i class="fas fa-table"></i>
+
+                      Tableau de données</div>
+                  <div class="card-body">
+                      <div class="table-responsive">
+                          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                              <thead>
+                              <tr>
+                                  <th>Email</th>
+                                  <th>Role</th>
+                                  <th>Edition</th>
+                              </tr>
+                              </thead>
+                              <tbody>
+                              <?php foreach ($users as $key => $user): ?>
+                                  <tr>
+                                      <td><?php echo $user['email']; ?></td>
+                                      <td><?php echo $user['role'] ?></td>
+                                      <td><a class="btn btn-success"href="edit_user.php?id=<?php echo $user['id'] ?>">EDITION</a></td>
+                                  </tr>
+                              <?php endforeach; ?>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+                  <div class="card-footer small text-muted">Mis à jour hier à 23h59</div>
+              </div>
+
           </div>
-          <div class="card-footer small text-muted">Mis à jour hier à 23h59</div>
-        </div>
-
-        <!-- DataTables Example -->
-        <div class="card mb-3">
-          <div class="card-header">
-            <i class="fas fa-table"></i>
-              tableau de données</div>
-          <div class="card-body">
-            <div class="table-responsive">
-              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead>
-                <tr>
-                  <th>Id</th>
-                  <th>Email</th>
-                  <th>Date</th>
-                </tr>
-                </thead>
-                <tfoot>
-                <tr>
-                  <th>Id</th>
-                  <th>Email</th>
-                  <th>Date</th>
-                </tr>
-                </tfoot>
-                <tbody>
-
-                <tr>
-                  <td>1</td>
-                  <td>Michel@gmail.com</td>
-                  <td>2020/01/15</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Bigo@gmail.com</td>
-                  <td>2020/01/15</td>
-                </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div class="card-footer small text-muted">Mis à jour hier à 23h59</div>
-        </div>
-
-      </div>
-      <!-- /.container-fluid -->
+                  <!-- /.container-fluid -->
 
       <!-- Sticky Footer -->
       <footer class="sticky-footer">
