@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0232fd11-832a-431e-bdbd-e0b989554cfb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modif-mot-de-passe.php" beforeDir="false" afterPath="$PROJECT_DIR$/modif-mot-de-passe.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,7 +68,7 @@
       <workItem from="1579248316328" duration="13622000" />
       <workItem from="1579604774513" duration="3227000" />
       <workItem from="1579611561751" duration="5543000" />
-      <workItem from="1579680528538" duration="629000" />
+      <workItem from="1579680528538" duration="3988000" />
     </task>
     <task id="LOCAL-00001" summary="Ajout dossier img et reset.css">
       <created>1579009635814</created>
