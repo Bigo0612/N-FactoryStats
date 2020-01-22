@@ -176,6 +176,13 @@ if (!empty($id)) {
                     echo $errors['email'];
                 } ?></p>
 
+
+            <label for="role"> Définir le nouveau rôle: </label>
+            <input type="text" name="role" id="role" value="<?php echo $user['role'] ?>">
+            <p class="error"><?php if (!empty($errors['role'])) {
+                    echo $errors['role'];
+                } ?></p>
+
             <input type="submit" name="submitted" value="Editer">
         </form>
     <?php } else {
