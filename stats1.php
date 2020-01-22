@@ -41,6 +41,18 @@ foreach ($json as $j) {
         $udpSrc = '';
     }
 
+    if (!empty($j['_source']['layers']['tcp']['tcp.dstport'])){
+        $tcpDst = $j['_source']['layers']['tcp']['tcp.dstport'];
+    } else {
+        $tcpDst = '';
+    }
+
+    if (!empty($j['_source']['layers']['udp']['udp.dstport'])){
+        $udpDst = $j['_source']['layers']['udp']['udp.dstport'];
+    } else {
+        $udpDst = '';
+    }
+
     if (!empty($j['_source']['layers']['eth']['eth.dst_tree']['eth.dst.oui_resolved'])){
         $constructeur = $j['_source']['layers']['eth']['eth.dst_tree']['eth.dst.oui_resolved'];
     } else {
@@ -58,12 +70,32 @@ foreach ($json as $j) {
             'adresse_MAC_destination' => $ethDst,
             'tcp_source' => $tcpSrc,
             'udp_source' => $udpSrc,
+            'tcp_destination' => $tcpDst,
+            'udp_destination' => $udpDst,
             'constructeur' => $constructeur
     );
 }
 
 
+
 debug($tableau);
 
+?>
+
+
+<table>
+    <thead>
+    <tr>
+        <th>Time</th>
+        <th>ip_source</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><? $time ?></td>
+        <td><? $ipSrc ?></td>
+    </tr>
+    </tbody>
+</table>
 
 
