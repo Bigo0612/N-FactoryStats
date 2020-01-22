@@ -2,6 +2,7 @@
 <html lang="fr" dir="ltr">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
     <title><?php if (!empty($title)) {
             echo $title;
         } else {

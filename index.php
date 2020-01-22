@@ -10,9 +10,8 @@ include('inc/header.php'); ?>
     <section class="graph-texte">
         <div class="exterieur">
             <div class="text-left">
-                <h2><br> <span>Business</span> to Next Level</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>Eos, libero. Lorem ipsum dolor sit
-                    amet,<br> consectetur adipisicing elit. Eos, libero</p>
+                <h2><span>NFactory Stats</span></h2>
+                <p>Avec Nfactory Stats, simplifiez vous les statistiques </p>
             </div>
             <img src="asset/img/graph.png">
         </div>
