@@ -67,6 +67,8 @@
     color: #008ebf;
 }
 
-
+textarea {
+    resize: none;
+}
 
 
