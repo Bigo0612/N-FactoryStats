@@ -46,7 +46,7 @@ include('inc/header.php');
 
 <div class="clear"></div>
 
-    <h1 class="h1form">connexion</h1>
+
 
     <form action="connexion.php" method="post" class="formulaires">
 

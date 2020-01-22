@@ -75,7 +75,7 @@ include('inc/header.php');
 
     <div class="clear"></div>
 
-    <h1 class="h1form">Inscription</h1>
+
 
     <form action="inscription.php" method="post" autocomplete="off" class="formulaires">
 
