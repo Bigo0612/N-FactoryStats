@@ -52,7 +52,7 @@
         </div>
         <div id="hamburger-overlay"></div>
     </div>
-    <div class="clear"></div>
+
 </header>
 
 

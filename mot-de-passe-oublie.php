@@ -32,11 +32,11 @@ if (!empty($_POST['submitted'])) {
 
 
 include ('inc/header.php'); ?>
+<div class="clear"></div>
 
 
-    <h2 id="modmp">Modification du mot de passe</h2>
     <form action="" method="post" class="formulaires">
-        <label for="email">Email *</label>
+        <label id="emmp" for="email">Email *</label>
         <input type="email" name="email" id="email" value="<?php if (!empty($_POST['email'])) { echo $_POST['email'];}?>">
         <p class="error"><?php if (!empty($errors['email'])) { echo $errors['email']; } ?></p>
 
