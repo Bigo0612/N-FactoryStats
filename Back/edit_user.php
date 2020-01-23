@@ -40,7 +40,7 @@ if(!empty($_GET['id']) && is_numeric($_GET['id'])) {
                 $query = $pdo->prepare($sql);
                 $query->bindValue(':email', $email1, PDO::PARAM_STR);
                 $query->bindValue(':id', $id, PDO::PARAM_INT);
-                $query->bindValue(':role', $role, PDO::PARAM_INT);
+                $query->bindValue(':role', $role, PDO::PARAM_STR);
                 $query->execute();
                 header('Location: index.php');
             }
@@ -83,7 +83,7 @@ if(!empty($_GET['id']) && is_numeric($_GET['id'])) {
 
 <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-    <a class="navbar-brand mr-1" href="index.php">N'FactoryStats</a>
+    <a class="navbar-brand mr-1" href="index.php">NFactoryStats</a>
 
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
         <i class="fas fa-bars"></i>
