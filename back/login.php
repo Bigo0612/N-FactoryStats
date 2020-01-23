@@ -55,7 +55,7 @@ if(!empty($_POST['submitted'])) {
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Admin N'FactoryStats - Connexion</title>
+  <title>Admin NFactoryStats - Connexion</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">

@@ -76,7 +76,7 @@ if(!empty($_POST['submitted'])) {
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Admin N'FactoryStats - Tableau de bord</title>
+  <title>Admin NFactoryStats - Tableau de bord</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -93,7 +93,7 @@ if(!empty($_POST['submitted'])) {
 
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-    <a class="navbar-brand mr-1" href="index.php">N'factoryStats</a>
+    <a class="navbar-brand mr-1" href="index.php">NfactoryStats</a>
 
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
       <i class="fas fa-bars"></i>
@@ -220,7 +220,7 @@ if(!empty($_POST['submitted'])) {
       <footer class="sticky-footer">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>&copy; 2020 - N'FactoryStats &reg;</span>
+            <span>&copy; 2020 - NFactoryStats &reg;</span>
           </div>
         </div>
       </footer>
