@@ -30,17 +30,18 @@ header .fixmenu {
 header .logo {
     float: left;
     height: 50px;
-    margin: 20px 0 0 100px;
+    margin: 20px 0 0 80px;
 }
+
 
 header nav ul {
     float: right;
-    margin: 40px 7% 0 0;
+    margin-top: 40px;
 }
 
 header nav ul li {
     float: left;
-    margin-left: 70px;
+    margin-right: 50px;
 }
 
 header nav ul li a {
@@ -78,7 +79,7 @@ header nav ul li a:hover{
     font-size: 4vw;
 }
 
-.graph-texte h2 span {
+.graph-texte .span-color {
     color: #008ebf;
 }
 
@@ -178,7 +179,6 @@ footer a:hover {
     color: #008ebf;
 }
 
-
 #hamburger, #hamburger-button {
     display: inline;
 }
@@ -221,19 +221,37 @@ footer a:hover {
 }
 
 #hamburger-sidebar ul {
-    margin: 0;
+    margin-top: 50px;
     float: none;
 }
 
 #hamburger-sidebar li {
     float: none;
     display: block;
-    margin-top: 70px;
+    margin: 50px 0 0 0;
     text-align: center;
-
 }
 
-#hamburger-sidebar img {
+#hamburger-sidebar .btn-menu {
+    display: block;
+    width: 150px;
+    margin: 0 auto;
+}
+
+#hamburger-sidebar li a {
+    text-decoration: none;
+    color: black;
+    padding: 15px 30px;
+    border: solid 1.5px #25313C;
+    background-color: white;
+    border-radius: 5px;
+}
+
+#hamburger-sidebar li a:hover {
+    color: #008ebf;
+}
+
+#hamburger-sidebar .logo {
     display: none;
 }
 
@@ -242,54 +260,20 @@ footer a:hover {
     height: 128px;
 }
 
+#hamburger-sidebar-header .logo-hamburger {
+    height: 100px;
+    display: block;
+    padding-top: 20px;
+    margin: 0 auto;
+
+
+}
+
+
 #hamburger-sidebar-body {
     padding: 16px 8px;
 }
 
-@media screen and (max-width: 1100px){
-
-    .exterieur {
-        padding: 30px;
-    }
-
-    .graph-texte .text-left {
-        margin: 0 auto;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-    }
-
-    .graph-texte h2 {
-        font-size: 5vw;
-    }
-    .graph-texte p {
-        font-size: 1.5vw;
-        width: 100%;
-        text-align: center;
-        margin-bottom: 100px;
-    }
-
-    .graph-texte img {
-        display: block;
-        width: 20%;
-        float: none;
-        margin: 0 auto;
-    }
-
-    #hamburger-content {
-        display: none;
-    }
-
-    #hamburger-button, #hamburger-sidebar, .hamburger-activated #hamburger-overlay {
-        display: block;
-    }
-
-    .hamburger-activated #hamburger-sidebar {
-        transform: translateX(0);
-
-    }
-
-}
 
 @media screen and (max-width: 900px){
     .graph-texte h2 {
@@ -325,6 +309,47 @@ footer a:hover {
     .wrap2 {
         width: 100%;
         margin: 0 auto;
+    }
+
+    .exterieur {
+        padding: 30px;
+    }
+
+    .graph-texte .text-left {
+        margin: 0 auto;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+    }
+
+    .graph-texte h2 {
+        font-size: 5vw;
+    }
+    .graph-texte p {
+        font-size: 1.5vw;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 100px;
+    }
+
+    .graph-texte img {
+        display: block;
+        width: 20%;
+        float: none;
+        margin: 0 auto;
+    }
+
+    header ul li  {
+        display: none;
+    }
+
+    #hamburger-button, #hamburger-sidebar, .hamburger-activated #hamburger-overlay {
+        display: block;
+    }
+
+    .hamburger-activated #hamburger-sidebar {
+        transform: translateX(0);
+
     }
 }
 
