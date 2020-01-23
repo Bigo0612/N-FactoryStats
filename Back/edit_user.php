@@ -33,13 +33,6 @@ if(!empty($_GET['id']) && is_numeric($_GET['id'])) {
                     $errors['email'] = 'Entrez un email!';
                 }
 
-            if (!empty($role)) {
-                if (!filter_var($role)) {
-                    $errors['role'] = 'role invalide';
-                }
-            } else {
-                $errors['role'] = 'Entrez un nouveau role!';
-            }
 
                     if (count($errors) == 0) {
 
@@ -49,7 +42,7 @@ if(!empty($_GET['id']) && is_numeric($_GET['id'])) {
                         $query->bindValue(':id', $id, PDO::PARAM_INT);
                         $query->bindValue(':role', $role, PDO::PARAM_INT);
                         $query->execute();
-                        header('Location: tables.php');
+                        header('Location: index.php');
                     }
             }
         } else {
@@ -187,10 +180,11 @@ if (!empty($id)) {
                 } ?></p>
 
             <label for="role"> Définir le nouveau rôle: </label>
-            <input type="text" name="role" id="role" value="<?php echo $user['role'] ?>">
-            <p class="error"><?php if (!empty($errors['role'])) {
-                    echo $errors['role'];
-                } ?></p>
+            <select name="role" size="1">
+                <option value="Abonne">Abonne</option>
+                <option value="Admin">Admin</option>
+            </select <?php echo $user['role'] ?>>
+
 
             <input type="submit" name="submitted" value="Editer">
         </form>
@@ -198,9 +192,6 @@ if (!empty($id)) {
         echo 'Error 404';
     }
 } ?>
-
-
-
 
 
                 <!-- Sticky Footer -->
