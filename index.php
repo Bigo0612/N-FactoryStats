@@ -42,6 +42,7 @@ include('inc/header.php'); ?>
                 <p>Simple à comprendre</p>
             </div>
         </div>
+        <div class="clear"></div>
     </section>
 
     <section id="tronbinoscope">
@@ -68,6 +69,7 @@ include('inc/header.php'); ?>
             <img src="asset/img/avatarsteve.png" alt="avatar Steve">
             <p>Développeur</p>
         </div>
+        <div class="clear"></div>
     </section>
 
 
