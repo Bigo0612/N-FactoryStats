@@ -86,7 +86,7 @@ if (!empty($_POST['desactive'])) {
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Admin N'FactoryShool - Tables</title>
+  <title>Admin NFactoryShool - Tables</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -103,7 +103,7 @@ if (!empty($_POST['desactive'])) {
 
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-    <a class="navbar-brand mr-1" href="index.php">N'FactoryStats</a>
+    <a class="navbar-brand mr-1" href="index.php">NFactoryStats</a>
 
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
       <i class="fas fa-bars"></i>
@@ -277,7 +277,7 @@ if (!empty($_POST['desactive'])) {
           <footer class="sticky-footer">
               <div class="container my-auto">
                   <div class="copyright text-center my-auto">
-                      <span>&copy; 2020 - N'FactoryStats &reg;</span>
+                      <span>&copy; 2020 - NFactoryStats &reg;</span>
                   </div>
               </div>
           </footer>

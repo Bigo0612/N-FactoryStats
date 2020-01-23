@@ -2,7 +2,7 @@
 session_start();
 require('../inc/pdo.php');
 require('../inc/function.php');
-$title = 'connexion';
+$title = 'login';
 $errors = array();
 $success = false;
 
@@ -30,7 +30,7 @@ if(!empty($_POST['submitted'])) {
                     'ip'    => $_SERVER['REMOTE_ADDR']
                 );
 
-                header('Location: index.php');
+                header('Location: login.php');
 
             } else {
                 $errors['email'] = 'email inconnu ou mot de passe oublié';
@@ -55,7 +55,7 @@ if(!empty($_POST['submitted'])) {
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Admin N'FactoryStats - Connexion</title>
+  <title>Admin NFactoryStats - Connexion</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">

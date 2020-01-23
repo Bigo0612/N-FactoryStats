@@ -2,7 +2,7 @@
 session_start();
 require('../inc/pdo.php');
 require('../inc/function.php');
-$title = 'inscription';
+$title = 'register';
 $errors = array();
 $success = false;
 
@@ -61,7 +61,7 @@ if(!empty($_POST['submitted'])) {
         $query->execute();
         $success = true;
 
-        header('location: connexion.php');
+        header('location: register.php');
     }
 }
 
