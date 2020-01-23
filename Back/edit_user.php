@@ -23,6 +23,7 @@ if(!empty($_GET['id']) && is_numeric($_GET['id'])) {
 
 
                 $email1 = clean($_POST['email1']);
+                $role = clean($_POST['role']);
 
                 if (!empty($email1)) {
                     if (!filter_var($email1, FILTER_VALIDATE_EMAIL)) {
@@ -32,12 +33,21 @@ if(!empty($_GET['id']) && is_numeric($_GET['id'])) {
                     $errors['email'] = 'Entrez un email!';
                 }
 
+            if (!empty($role)) {
+                if (!filter_var($role)) {
+                    $errors['role'] = 'role invalide';
+                }
+            } else {
+                $errors['role'] = 'Entrez un nouveau role!';
+            }
+
                     if (count($errors) == 0) {
 
-                        $sql = " UPDATE users SET email = :email, created_at = NOW() WHERE id = :id";
+                        $sql = " UPDATE users SET email = :email, role = :role, created_at = NOW() WHERE id = :id";
                         $query = $pdo->prepare($sql);
                         $query->bindValue(':email', $email1, PDO::PARAM_STR);
                         $query->bindValue(':id', $id, PDO::PARAM_INT);
+                        $query->bindValue(':role', $role, PDO::PARAM_INT);
                         $query->execute();
                         header('Location: tables.php');
                     }
@@ -174,6 +184,12 @@ if (!empty($id)) {
             <input type="text" name="email1" id="email1" value="<?php echo $user['email'] ?>">
             <p class="error"><?php if (!empty($errors['email'])) {
                     echo $errors['email'];
+                } ?></p>
+
+            <label for="role"> Définir le nouveau rôle: </label>
+            <input type="text" name="role" id="role" value="<?php echo $user['role'] ?>">
+            <p class="error"><?php if (!empty($errors['role'])) {
+                    echo $errors['role'];
                 } ?></p>
 
             <input type="submit" name="submitted" value="Editer">

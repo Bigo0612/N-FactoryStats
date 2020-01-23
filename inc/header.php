@@ -19,6 +19,7 @@
 <body>
 
 <header>
+    <div class="fixmenu">
     <div id="hamburger">
         <div id="hamburger-content">
             <nav class="navbar">
@@ -52,6 +53,7 @@
             <div id="hamburger-sidebar-body"></div>
         </div>
         <div id="hamburger-overlay"></div>
+    </div>
     </div>
 </header>
 

@@ -67,11 +67,8 @@
     color: #008ebf;
 }
 
-h2#modmp {
-    color: lightseagreen;
-    margin-top: 190px;
-    text-align: center;
-    font-weight: bold;
+textarea {
+    resize: none;
 }
 
 

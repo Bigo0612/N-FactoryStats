@@ -11,10 +11,7 @@ $query = $pdo->prepare($sql);
 $query->execute();
 $users = $query->fetchALL();
 
-$sql = "SELECT * FROM users";
-$query = $pdo->prepare($sql);
-$query->execute();
-$user = $query->fetchAll();
+
 
 
 if(!empty($_POST['submitted'])) {
@@ -66,13 +63,6 @@ if(!empty($_POST['submitted'])) {
     }
 }
 
-if (!empty($_POST['desactive'])) {
-    $i= 0;
-    $id = $user[$i]['id'];
-    $sql = "DELETE FROM users WHERE  id = $id";
-    $query = $pdo->prepare($sql);
-    $query->execute();
-}
 ?>
 
 <!DOCTYPE html>
@@ -189,52 +179,7 @@ if (!empty($_POST['desactive'])) {
 
 
 
-
-          <h2>désactiver un utilisateur:</h2>
-
-          <div class="card mb-4">
-              <div class="card-header">
-                  <i class="fas fa-table"></i>
-
-                  Tableau de données</div>
-              <div class="card-body">
-                  <div class="table-responsive">
-                      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                          <thead>
-                          <tr>
-                              <th>Id</th>
-                              <th>Email</th>
-                              <th>role</th>
-                              <th>Date</th>
-                          </tr>
-                          </thead>
-                          <tfoot>
-                          <tr>
-                              <th>Id</th>
-                              <th>Email</th>
-                              <th>role</th>
-                              <th>Date</th>
-                          </tr>
-                          </tfoot>
-                          <tbody>
-                          <?php
-                          echo '<tr>'; ?>
-                          <form action="tables.php" name="desactive" method="post"> <?php
-                              for ($i = 0; $i < count($user); $i++) {
-                              echo '<td>' . $user[$i]['id'] . '</td>';
-                              echo '<td>' . $user[$i]['email'] . '</td>';
-                              echo '<td>' . $user[$i]['role'] . '</td>';
-                              echo '<td>' . $user[$i]['created_at'] . '</td>';
-                              echo '<td>' . '<input type="submit" name="desactive" id="' . $user[$i]['id'] . '" value="desactiver ' . $user[$i]['id'] . '">'.'</td>';
-                              ?>
-                          </form> <?php
-                          echo '</tr>';} ?>
-                          </tbody>
-                      </table>
-                  </div>
-              </div>
-
-              <h2>Edition d'un utilisateur:</h2>
+              <h2>Edition et suppression d'un utilisateur:</h2>
 
               <div class="card mb-5">
                   <div class="card-header">
@@ -249,6 +194,7 @@ if (!empty($_POST['desactive'])) {
                                   <th>Email</th>
                                   <th>Role</th>
                                   <th>Edition</th>
+                                  <th>Suprression</th>
                               </tr>
                               </thead>
                               <tbody>
@@ -257,6 +203,7 @@ if (!empty($_POST['desactive'])) {
                                       <td><?php echo $user['email']; ?></td>
                                       <td><?php echo $user['role'] ?></td>
                                       <td><a class="btn btn-success"href="edit_user.php?id=<?php echo $user['id'] ?>">EDITION</a></td>
+                                      <td><a class="btn btn-danger" href="supp_user.php?id=<?php echo $user['id'] ?>">SUPPRESSION</a></td>
                                   </tr>
                               <?php endforeach; ?>
                               </tbody>

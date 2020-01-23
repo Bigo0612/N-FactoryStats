@@ -47,11 +47,8 @@ if(!empty($_GET['token']) && !empty($_GET['email'])) {
         }
     }
 }
-
-
 include('inc/header.php'); ?>
-
-    <h2 class="h2">Modifier votre mot de passe</h2>
+    <div class="clear"></div>
 
     <form action="" method="post" class="formulaires">
         <div class="formdiv">
