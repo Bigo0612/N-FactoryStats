@@ -92,6 +92,7 @@ include('inc/header.php');
         <div class="formdiv">
         <label for="password2">Confirmer le mot de passe</label>
         <input type="password" name="password2" id="password2" value="">
+        <p class="error"><?php if(!empty($errors['password2'])) { echo $errors['password2']; } ?></p>
         </div>
         <div class="formdiv">
             <a href="cgu.php">Conditions générales d’utilisation</a>
