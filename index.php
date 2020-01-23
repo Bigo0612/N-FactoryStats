@@ -10,8 +10,11 @@ include('inc/header.php'); ?>
     <section class="graph-texte">
         <div class="exterieur">
             <div class="text-left">
-                <h2><span>NFactory Stats</span></h2>
-                <p>Avec Nfactory Stats, simplifiez vous les statistiques </p>
+                <h2><span class="span-color">NFactory Stats</span></h2>
+                <p>Réseau, fichier Json, chiffres, pourcentages… <br>
+                    Tant de mots connotés d'ombres, et pourtant…<br>
+                    Il suffit juste d'un bon site!<br>
+                    Alors, ne dites plus non aux statistiques, dites oui à <span class="span-color">NFactory Stats !<span></span></p>
             </div>
             <img src="asset/img/graph.png">
         </div>
@@ -39,6 +42,7 @@ include('inc/header.php'); ?>
                 <p>Simple à comprendre</p>
             </div>
         </div>
+        <div class="clear"></div>
     </section>
 
     <section id="tronbinoscope">
@@ -65,6 +69,7 @@ include('inc/header.php'); ?>
             <img src="asset/img/avatarsteve.png" alt="avatar Steve">
             <p>Développeur</p>
         </div>
+        <div class="clear"></div>
     </section>
 
 

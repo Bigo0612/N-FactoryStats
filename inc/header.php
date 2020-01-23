@@ -17,9 +17,7 @@
 
 
 <body>
-
 <header>
-    <div class="fixmenu">
     <div id="hamburger">
         <div id="hamburger-content">
             <nav class="navbar">
@@ -27,21 +25,21 @@
                     <img class="logo" src="asset/img/logo1.png" alt="logo Nfactory Stats">
                 </a>
                 <ul>
-                    <li><a href="index.php">Accueil</a></li>
+                    <li><a class="btn-menu" href="index.php">Accueil</a></li>
 
 
                     <?php if (!is_logged()) { ?>
-                        <li><a href="inscription.php">Inscription</a></li>
-                        <li><a href="connexion.php">Connexion</a></li>
+                        <li><a class="btn-menu" href="inscription.php">Inscription</a></li>
+                        <li><a class="btn-menu" href="connexion.php">Connexion</a></li>
 
                     <?php } elseif ($_SESSION['email']['role'] == "admin") { ?>
-                        <li><a href="back/index.php">Admin</a></li>
-                        <li><a href="stats.php">Stats</a></li>
-                        <li><a href="deconnexion.php">Deconnexion</a></li>
+                        <li><a class="btn-menu" href="back/index.php">Admin</a></li>
+                        <li><a class="btn-menu" href="stats.php">Stats</a></li>
+                        <li><a class="btn-menu" href="deconnexion.php">Deconnexion</a></li>
 
                     <?php } else { ?>
-                        <li><a href="stats.php">Stats</a></li>
-                        <li><a href="deconnexion.php">Deconnexion</a></li>
+                        <li><a class="btn-menu" href="stats.php">Stats</a></li>
+                        <li><a class="btn-menu" href="deconnexion.php">Deconnexion</a></li>
                         <li><?php echo $_SESSION['email']['email']; ?></li>
                     <?php } ?>
                 </ul>
@@ -49,11 +47,12 @@
         </div>
         <button id="hamburger-button">&#9776</button>
         <div id="hamburger-sidebar">
-            <div id="hamburger-sidebar-header"></div>
+            <div id="hamburger-sidebar-header">
+                <img class="logo-hamburger" src="asset/img/logo1.png" alt="logo Nfactory stats">
+            </div>
             <div id="hamburger-sidebar-body"></div>
         </div>
         <div id="hamburger-overlay"></div>
-    </div>
     </div>
 </header>
 
