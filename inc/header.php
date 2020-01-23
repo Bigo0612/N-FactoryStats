@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="asset/css/style.css">
     <link rel="stylesheet" href="asset/css/connexion.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
 </head>
 
@@ -35,11 +36,11 @@
 
                     <?php } elseif ($_SESSION['email']['role'] == "admin") { ?>
                         <li><a href="back/index.php">Admin</a></li>
-                        <li><a href="stats1.php">stats1</a></li>
+                        <li><a href="stats.php">Stats</a></li>
                         <li><a href="deconnexion.php">Deconnexion</a></li>
 
                     <?php } else { ?>
-                        <li><a href="stats1.php">stats1</a></li>
+                        <li><a href="stats.php">Stats</a></li>
                         <li><a href="deconnexion.php">Deconnexion</a></li>
                         <li><?php echo $_SESSION['email']['email']; ?></li>
                     <?php } ?>
