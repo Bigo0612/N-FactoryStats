@@ -58,6 +58,7 @@ include('inc/header.php'); ?>
             <p>Développeur</p>
         </div>
 
+
         <div class="ava avasof">
             <h4>Sofien</h4>
             <img src="asset/img/avatarsofien.png" alt="avatar Sofien">
@@ -74,3 +75,4 @@ include('inc/header.php'); ?>
 
 
 <?php include('inc/footer.php');
+

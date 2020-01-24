@@ -10,6 +10,7 @@
         } ?> </title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="asset/css/style.css">
+
     <link rel="stylesheet" href="asset/css/connexion.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
@@ -54,16 +55,4 @@
         <div id="hamburger-overlay"></div>
     </div>
 </header>
-
-
-
-
-
-
-
-
-
-
-
-
 
