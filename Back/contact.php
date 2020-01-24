@@ -3,66 +3,10 @@ session_start();
 require('../inc/pdo.php');
 require('../inc/function.php');
 
-$errors = array();
-$success = false;
-
-$sql = "SELECT * from users WHERE 1";
+$sql = "SELECT * FROM contact WHERE 1";
 $query = $pdo->prepare($sql);
 $query->execute();
-$users = $query->fetchALL();
-
-
-
-
-if(!empty($_POST['submitted'])) {
-
-    $email = trim(strip_tags($_POST['email']));
-    $password1 = trim(strip_tags($_POST['password1']));
-    $password2 = trim(strip_tags($_POST['password2']));
-
-
-    if(filter_var($email,FILTER_VALIDATE_EMAIL) === false) {
-        $errors['email'] = 'Veuillez renseigner un email valide';
-    }else{
-
-        $sql = "SELECT id FROM users WHERE email = :mail LIMIT 1";
-        $query = $pdo->prepare($sql);
-        $query->bindValue(':mail' ,$email,PDO::PARAM_STR);
-        $query->execute();
-        $verifemail = $query->fetch();
-        if(!empty($verifemail)) {
-            $errors['pseudo'] = 'cet email existe déjà!';
-        }
-    }
-
-    if(!empty($password1)) {
-        if($password1 != $password2) {
-            $errors['password'] = 'Les deux mot de passe doivent être identique';
-        } elseif(mb_strlen($password1) <= 5) {
-            $errors['password'] = 'Min 6 caractères';
-        }
-    }else{
-        $errors['password'] = 'Veuillez renseigner un mot de passe';
-    }
-
-
-    if(count($errors) == 0) {
-
-        $hashpassword = password_hash($password1,PASSWORD_BCRYPT);
-        $token = generateRandomString(120);
-
-        $sql = "INSERT INTO users VALUES (null,:email,:password,:token,'abonne',NOW())";
-        $query = $pdo->prepare($sql);
-        $query->bindValue(':email' , $email, PDO::PARAM_STR);
-        $query->bindValue(':password' , $hashpassword, PDO::PARAM_STR);
-        $query->bindValue(':token' , $token, PDO::PARAM_STR);
-        $query->execute();
-        $success = true;
-
-        header('location: index.php');
-    }
-}
-
+$messages = $query->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -192,7 +136,7 @@ if(!empty($_POST['submitted'])) {
 
 
 
-              <h2>Edition et suppression d'un utilisateur:</h2>
+              <h2>Consultation des messages de contact:</h2>
 
               <div class="card mb-5">
                   <div class="card-header">
@@ -205,25 +149,22 @@ if(!empty($_POST['submitted'])) {
                               <thead>
                               <tr>
                                   <th>Email</th>
-                                  <th>Role</th>
-                                  <th>Edition</th>
-                                  <th>Suprression</th>
+                                  <th>Message</th>
+                                  <th>Suppression</th>
                               </tr>
                               </thead>
                               <tbody>
-                              <?php foreach ($users as $key => $user): ?>
+                              <?php foreach ($messages as $key => $message): ?>
                                   <tr>
-                                      <td><?php echo $user['email']; ?></td>
-                                      <td><?php echo $user['role'] ?></td>
-                                      <td><a class="btn btn-success"href="edit_user.php?id=<?php echo $user['id'] ?>">EDITION</a></td>
-                                      <td><a class="btn btn-danger" href="supp_user.php?id=<?php echo $user['id'] ?>">SUPPRESSION</a></td>
+                                      <td><?php echo $message['email']; ?></td>
+                                      <td><?php echo $message['message'] ?></td>
+                                      <td><a class="btn btn-danger" href="supp_message.php?id=<?php echo $message['id'] ?>">SUPPRESSION</a></td>
                                   </tr>
                               <?php endforeach; ?>
                               </tbody>
                           </table>
                       </div>
                   </div>
-                  <div class="card-footer small text-muted">Mis à jour hier à 23h59</div>
               </div>
 
           </div>
@@ -290,3 +231,4 @@ if(!empty($_POST['submitted'])) {
 </body>
 
 </html>
+

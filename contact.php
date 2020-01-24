@@ -38,6 +38,8 @@ if (!empty($_POST['submitted'])) {
         $query->bindValue(':message', $message, PDO::PARAM_STR);
         $query->execute();
         $success = true;
+
+        header('Location: index.php');
     }
 }
 
