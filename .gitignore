@@ -129,6 +129,7 @@ fabric.properties
 # modules.xml
 # .idea/misc.xml
 # *.ipr
+/inc/pdo.php
 
 # Sonarlint plugin
 .idea/**/sonarlint/
@@ -165,5 +166,7 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+.idea
 
 # End of https://www.gitignore.io/api/linux,macos,windows,composer,phpstorm
