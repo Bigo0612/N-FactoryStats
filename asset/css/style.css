@@ -3,185 +3,47 @@
 html {
     height: 100%;
 }
-
 body {
+    position: relative;
     margin: 0;
+    min-height: 100%;
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     font-weight: 400;
     color: #fff;
-    position: relative;
-    min-height: 100%;
 }
 
 
-.bg-img {
-    background-image: url("../img/main-img.jpeg");
-    height: 1000px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-
-header .logo {
+header nav .logo {
     float: left;
     height: 50px;
-    margin: 20px 0 0 80px;
+    margin: 20px 0 0 20px;
 }
-
-
 header nav ul {
     float: right;
     margin-top: 40px;
 }
-
 header nav ul li {
     float: left;
-    margin-right: 50px;
+    margin-right: 40px;
 }
-
 header nav ul li a {
+    padding: 15px 30px;
     text-decoration: none;
     color: white;
-    padding: 15px 30px;
     border: solid 1px #fff;
-    background-color: rgba(0, 0, 0, 0.5);
     border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
 }
-
 header nav ul li a:hover {
     color: #008ebf;
 }
 
-.graph-texte {
-    background-color: #ECF0F1;
-}
 
-
-.graph-texte img {
-    float: right;
-    width: 20%;
-    margin: 50px 150px 50px 0;
-}
-
-.graph-texte .text-left {
-    float: left;
-    margin: 80px 0 0 150px;
-}
-
-.graph-texte h2 {
-    color: #384141;
-    font-size: 4em;
-}
-
-.graph-texte .span-color {
-    color: #008ebf;
-}
-
-.graph-texte p {
-    font-size: 1.2em;
-    float: left;
-    line-height: 25px;
-    margin-top: 30px;
-    color: #808080;
-}
-
-#fonctionnement {
-    background-color: #25313C;
-}
-
-.ex img {
-    margin-top: 50px;
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-    width: 40%;
-}
-
-.ex {
-    float: left;
-    width: 33.33333333333333333333%;
-    margin-top: 50px;
-}
-
-.ex h3 {
-    font-size: 1.8em;
-    text-transform: uppercase;
-    text-align: center;
-}
-
-.ex p {
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
-
-.wrap2 {
-    width: 100%;
-    margin: 0 auto;
-}
-
-#tronbinoscope {
-    background-color: #ECF0F1;
-}
-
-.ava {
-    float: left;
-    width: 25%;
-    margin-top: 50px;
-}
-
-.ava img {
-    margin-top: 50px;
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-    height: 200px;
-    width: 200px;
-}
-
-.ava h4 {
-    color: #25313C;
-    font-size: 1.8em;
-    text-align: center;
-}
-
-.ava p {
-    color: #25313C;
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 150px;
-}
-
-footer {
-    width: 100%;
-    color: white;
-    text-align: center;
-    background-color: #25313C;
-    padding: 20px 0 20px 0;
-    position: absolute;
-    bottom: 0px;
-}
-
-footer p {
-    margin-bottom: 10px;
-}
-
-footer a {
-    text-decoration: none;
-    color: white;
-    margin-right: 20px;
-}
-
-footer a:hover {
-    color: #008ebf;
-}
 
 #hamburger, #hamburger-button {
     display: inline;
 }
-
 #hamburger-button {
     display: none;
     cursor: pointer;
@@ -194,7 +56,6 @@ footer a:hover {
     float: right;
     margin-right: 20px;
 }
-
 #hamburger-overlay {
     display: none;
     position: fixed;
@@ -205,7 +66,6 @@ footer a:hover {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.4);
 }
-
 #hamburger-sidebar {
     display: none;
     position: fixed;
@@ -218,25 +78,21 @@ footer a:hover {
     transform: translateX(-150%);
     transition: transform .2s ease-out;
 }
-
 #hamburger-sidebar ul {
     margin-top: 50px;
     float: none;
 }
-
 #hamburger-sidebar li {
     float: none;
     display: block;
     margin: 50px 0 0 0;
     text-align: center;
 }
-
 #hamburger-sidebar .btn-menu {
     display: block;
     width: 150px;
     margin: 0 auto;
 }
-
 #hamburger-sidebar li a {
     text-decoration: none;
     color: black;
@@ -245,36 +101,259 @@ footer a:hover {
     background-color: white;
     border-radius: 5px;
 }
-
 #hamburger-sidebar li a:hover {
     color: #008ebf;
 }
-
 #hamburger-sidebar .logo {
     display: none;
 }
-
 #hamburger-sidebar-header {
     background-color: #25313C;
     height: 128px;
 }
-
 #hamburger-sidebar-header .logo-hamburger {
     height: 90px;
     display: block;
     padding-top: 35px;
     margin: 0 auto;
 }
-
 #hamburger-sidebar-body {
     padding: 16px 8px;
 }
+
+
+
+.bg-img {
+    width: 100%;
+    height: 900px;
+    background-image: url("../img/main-img.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+#graph-texte {
+    background-color: #ECF0F1;
+}
+.graph-texte .text-left {
+    float: left;
+    margin: 80px 0 0 150px;
+}
+.graph-texte h2 {
+    color: #384141;
+    font-size: 4em;
+}
+.graph-texte .span-color {
+    color: #008ebf;
+}
+.graph-texte p {
+    font-size: 1.2em;
+    float: left;
+    line-height: 25px;
+    margin-top: 30px;
+    color: #808080;
+}
+.graph-texte img {
+    float: right;
+    margin: 50px 150px 50px 0;
+    width: 20%;
+}
+
+
+
+#fonctionnement {
+    background-color: #25313C;
+}
+.wrap-ex {
+    width: 100%;
+    margin: 0 auto;
+}
+.ex {
+    float: left;
+    width: 33.33333333333333333333%;
+    margin-top: 50px;
+}
+.ex h3 {
+    font-size: 1.8em;
+    text-transform: uppercase;
+    text-align: center;
+}
+.ex img {
+    display: block;
+    margin-top: 50px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 30%;
+}
+.ex p {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+
+
+#tronbinoscope {
+    background-color: #ECF0F1;
+}
+.ava {
+    float: left;
+    margin-top: 50px;
+    width: 25%;
+}
+.ava h4 {
+    color: #25313C;
+    font-size: 1.8em;
+    text-align: center;
+}
+.ava img {
+    display: block;
+    height: 200px;
+    width: 200px;
+    margin-top: 50px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.ava p {
+    color: #25313C;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+.avaste p {
+    margin-bottom: 150px;
+}
+
+
+
+.formulaires {
+    margin: 0 auto;
+    width: 50%;
+    max-width: 400px;
+    background-color: white;
+    margin-top: 120px;
+}
+.formulaires .formdiv {
+    margin-bottom: 20px;
+}
+.formulaires label {
+    font-size: 0.8em;
+    color: #008ebf;
+    margin-top: 180px;
+}
+.formulaires input[type=text], .formulaires input[type=password], .formulaires input[type=email] {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background: #f1f1f1;
+}
+.formulaires input[type=submit] {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background: #f1f1f1;
+    color: dimgrey;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+#mpoublie {
+    font-weight: bold;
+    font-size: 0.8em;
+    color: #008ebf;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-bottom: 145px;
+}
+#susub {
+    margin-bottom: 80px;
+}
+#submp {
+    margin-bottom: 200px;
+}
+.formulaires p {
+    color: red;
+    font-size: 0.7em;
+}
+.formulaires a {
+    font-size: 0.8em;
+    color: #008ebf;
+}
+textarea {
+    resize: none;
+}
+
+
+.wrap-tab{
+    width: 80%;
+    margin: 0 auto;
+}
+#tableau {
+    color: black;
+    margin: 0 auto;
+}
+#tableau th{
+    border: solid 1px white;
+    background-color: #25313C;
+    color: white;
+    font-size: 1.4em;
+    margin-right: 10px;
+    vertical-align: middle;
+    padding: 10px 5px 10px 5px;
+}
+#tableau td{
+    border: solid 1px #25313C;
+    text-align: center;
+    vertical-align: middle;
+    padding: 5px 0 5px 0;
+}
+.tcpudp {
+    width: 70%;
+    display: block;
+    margin: 0 auto;
+    padding: 100px 0 100px 0;
+}
+.constructeur {
+    width: 70%;
+    display: block;
+    margin: 0 auto;
+    padding-bottom: 100px;
+}
+
+
+
+
+footer {
+    position: absolute;
+    width: 100%;
+    padding: 20px 0 20px 0;
+    bottom: 0px;
+    color: white;
+    text-align: center;
+    background-color: #25313C;
+}
+footer p {
+    margin-bottom: 10px;
+}
+footer a {
+    text-decoration: none;
+    color: white;
+    margin-right: 20px;
+}
+footer a:hover {
+    color: #008ebf;
+}
+
+
 
 @media screen and (max-width: 1245px) {
     .graph-texte h2 {
         font-size: 2em;
     }
-
     .graph-texte p {
         font-size: 1em;
     }
@@ -284,70 +363,15 @@ footer a:hover {
     .graph-texte .text-left {
         margin-top: 55px;
     }
-
     .graph-texte h2 {
         font-size: 1.7em;
     }
-
     .graph-texte p {
         font-size: 0.7em;
     }
 }
 
 @media screen and (max-width: 900px) {
-
-    .ex {
-        width: 100%;
-        margin-top: 0px;
-    }
-
-    .ex img {
-        width: 12%;
-    }
-
-
-    .ex h3 {
-        display: none;
-    }
-
-    .ex p {
-        margin-top: 20px;
-    }
-
-    .wrap2 {
-        width: 100%;
-        margin: 0 auto;
-    }
-
-
-    .graph-texte .text-left {
-        margin: 0 auto;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-    }
-
-    .graph-texte h2 {
-        font-size: 3em;
-        margin-top: 50px;
-    }
-
-    .graph-texte p {
-        font-size: 1.3em;
-        width: 100%;
-        text-align: center;
-        margin-bottom: 50px;
-    }
-
-    .graph-texte img {
-        display: block;
-        width: 30%;
-        float: none;
-        margin: 0 auto;
-        padding-bottom: 50px;
-
-    }
-
     header ul li {
         display: none;
     }
@@ -355,19 +379,52 @@ footer a:hover {
     #hamburger-button, #hamburger-sidebar, .hamburger-activated #hamburger-overlay {
         display: block;
     }
-
     .hamburger-activated #hamburger-sidebar {
         transform: translateX(0);
-
     }
-}
 
-@media screen and (max-width: 820px) {
+    .graph-texte .text-left {
+        margin: 0 auto;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+    }
+    .graph-texte h2 {
+        font-size: 3em;
+        margin-top: 50px;
+    }
+    .graph-texte p {
+        font-size: 1.3em;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    .graph-texte img {
+        display: block;
+        width: 30%;
+        float: none;
+        margin: 0 auto;
+        padding-bottom: 50px;
+    }
+
+    .ex {
+        width: 100%;
+        margin-top: 0px;
+    }
+    .ex img {
+        width: 12%;
+    }
+    .ex h3 {
+        display: none;
+    }
+    .ex p {
+        margin-top: 20px;
+    }
+
     .ava {
         width: 100%;
         margin-top: 50px;
     }
-
     .ava img {
         margin-top: 0px;
         display: block;
@@ -376,12 +433,11 @@ footer a:hover {
         height: 150px;
         width: 150px;
     }
-
     .ava p {
         margin-top: 20px;
     }
-
 }
+
 
 @media screen and (max-width: 500px) {
     header .logo {
@@ -391,14 +447,10 @@ footer a:hover {
     .graph-texte p {
         font-size: 1em;
     }
-
     .graph-texte img {
         width: 50%;
     }
 
-    .ex {
-        margin-top: 25px;
-    }
 }
 
 

@@ -13,8 +13,7 @@ button.addEventListener('click', function (e) {
 });
 
 button.addEventListener('keydown', function (e) {
-    if (this.parentNode.classList.contains(activatedClass))
-    {
+    if (this.parentNode.classList.contains(activatedClass)) {
         if (e.repeat === false && e.which === 27)
             this.parentNode.classList.remove(activatedClass)
     }

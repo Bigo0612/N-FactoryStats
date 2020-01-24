@@ -2,7 +2,7 @@
 session_start();
 require('inc/pdo.php');
 require('inc/function.php');
-$title = 'Home page';
+$title = 'NFactory Stats';
 
 
 include('inc/header.php'); ?>
@@ -23,7 +23,7 @@ include('inc/header.php'); ?>
     <div class="clear"></div>
 
     <section id="fonctionnement">
-        <div class="wrap2">
+        <div class="wrap-ex">
             <div class="ex simple">
                 <h3>Simple</h3>
                 <img src="asset/img/pouce.png" alt="logo simplicité">

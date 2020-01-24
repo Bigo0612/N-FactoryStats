@@ -45,25 +45,33 @@ if (!empty($_POST['submitted'])) {
 include('inc/header.php');
 ?>
 
-<div class="clear"></div>
+    <div class="clear"></div>
 
 
+    <form action="" method="post" class="formulaires">
 
-<form action="" method="post" class="formulaires">
-
-    <div class="formdiv">
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email" value="<?php if(!empty($_POST['email'])) { echo $_POST['email']; } ?>">
-        <p class="error"><?php if(!empty($errors['email'])) { echo $errors['email']; } ?></p>
-    </div>
-    <div class="formdiv">
-        <textarea placeholder="Votre message" name="message" rows="8" cols="53"><?php if(!empty( $_POST['message'])) {echo $_POST['message'];} ?></textarea>
-        <p class="error"><?php if(!empty($errors['message'])) { echo $errors['message']; } ?></p>
-    </div>
-    <div class="formdiv">
-        <input type="submit" name="submitted" value="Envoyer">
-    </div>
-</form>
+        <div class="formdiv">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" value="<?php if (!empty($_POST['email'])) {
+                echo $_POST['email'];
+            } ?>">
+            <p class="error"><?php if (!empty($errors['email'])) {
+                    echo $errors['email'];
+                } ?></p>
+        </div>
+        <div class="formdiv">
+            <textarea placeholder="Votre message" name="message" rows="8"
+                      cols="53"><?php if (!empty($_POST['message'])) {
+                    echo $_POST['message'];
+                } ?></textarea>
+            <p class="error"><?php if (!empty($errors['message'])) {
+                    echo $errors['message'];
+                } ?></p>
+        </div>
+        <div class="formdiv">
+            <input type="submit" name="submitted" value="Envoyer">
+        </div>
+    </form>
 
 <?php
 include('inc/footer.php');

@@ -40,7 +40,6 @@
                     <?php } else { ?>
                         <li><a class="btn-menu" href="stats.php">Stats</a></li>
                         <li><a class="btn-menu" href="deconnexion.php">Deconnexion</a></li>
-                        <li><?php echo $_SESSION['email']['email']; ?></li>
                     <?php } ?>
                 </ul>
             </nav>
