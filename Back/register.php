@@ -41,11 +41,6 @@ if(!empty($_POST['submitted'])) {
         $errors['password'] = 'Veuillez renseigner un mot de passe';
     }
 
-    if(!empty($_POST['cgu'])) {
-
-    } else {
-        $error['cgu'] = 'Veuillez accepter les Conditions générales d’utilisation.';
-    }
 
 
     if(count($errors) == 0) {
@@ -61,11 +56,9 @@ if(!empty($_POST['submitted'])) {
         $query->execute();
         $success = true;
 
-        header('location: register.php');
+        header('location: login.php');
     }
 }
-
-
 ?>
 
 <!DOCTYPE html>
@@ -79,7 +72,7 @@ if(!empty($_POST['submitted'])) {
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Admin N'FactoryStats - Inscription</title>
+  <title>Admin NFactoryStats - Inscription</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -96,40 +89,28 @@ if(!empty($_POST['submitted'])) {
       <div class="card-header">Créer un compte</div>
       <div class="card-body">
         <form>
-          <div class="form-group">
-            <div class="form-row">
-              <div class="col-md-6">
-                <div class="form-label-group">
-                  <input type="text" id="firstName" class="form-control" placeholder="Prénom" required="required" autofocus="autofocus">
-                  <label for="firstName">Prénom</label>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-label-group">
-                  <input type="text" id="lastName" class="form-control" placeholder="Nom" required="required">
-                  <label for="lastName">Nom</label>
-                </div>
-              </div>
-            </div>
-          </div>
+
           <div class="form-group">
             <div class="form-label-group">
-              <input type="email" id="inputEmail" class="form-control" placeholder="Email" required="required">
-              <label for="inputEmail">Email</label>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" value="<?php if(!empty($_POST['email'])) { echo $_POST['email']; } ?>">
+                <p class="error"><?php if(!empty($errors['email'])) { echo $errors['email']; } ?></p>
             </div>
           </div>
           <div class="form-group">
             <div class="form-row">
               <div class="col-md-6">
                 <div class="form-label-group">
-                  <input type="password" id="inputPassword" class="form-control" placeholder="Mot de passe" required="required">
-                  <label for="inputPassword">Mot de passe</label>
+                    <label for="password1">Mot de passe</label>
+                    <input type="password" name="password1" id="password1" value="">
+                    <p class="error"><?php if(!empty($errors['password'])) { echo $errors['password']; } ?></p>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-label-group">
-                  <input type="password" id="confirmPassword" class="form-control" placeholder="Confirmer votre mot de passe" required="required">
-                  <label for="confirmPassword">Confirmer votre mot de passe</label>
+                    <label for="password2">Confirmer le mot de passe</label>
+                    <input type="password" name="password2" id="password2" value="">
+                    <p class="error"><?php if(!empty($errors['password2'])) { echo $errors['password2']; } ?></p>
                 </div>
               </div>
             </div>
