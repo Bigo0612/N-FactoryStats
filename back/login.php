@@ -30,7 +30,7 @@ if(!empty($_POST['submitted'])) {
                     'ip'    => $_SERVER['REMOTE_ADDR']
                 );
 
-                header('Location: login.php');
+                header('Location: index.php');
 
             } else {
                 $errors['email'] = 'email inconnu ou mot de passe oublié';

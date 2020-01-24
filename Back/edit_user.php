@@ -181,8 +181,8 @@ if(!empty($_GET['id']) && is_numeric($_GET['id'])) {
 
                         <label for="role"> Définir le nouveau rôle: </label>
                         <select name="role" size="1">
-                            <option value="abonne">abonne</option>
-                            <option value="admin">admin</option>
+                            <option value="abonne">Abonne</option>
+                            <option value="admin">Admin</option>
                         </select <?php echo $user['role'] ?>>
 
 

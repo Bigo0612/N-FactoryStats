@@ -59,7 +59,7 @@ if(!empty($_POST['submitted'])) {
         $query->execute();
         $success = true;
 
-        header('location: tables.php');
+        header('location: index.php');
     }
 }
 
@@ -161,6 +161,10 @@ if(!empty($_POST['submitted'])) {
           <a class="dropdown-item" href="forgot-password.php">Mot de passe oublié</a>
         </div>
       </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="../index.php">
+                <span>Retour au site</span>
+            </a>
 
 
     </ul>
